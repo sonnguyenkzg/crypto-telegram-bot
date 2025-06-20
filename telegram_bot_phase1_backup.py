@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Telegram Crypto Wallet Monitor Bot - Phase 2: Full Functionality
-Migration from Slack to Telegram with real wallet management
+Telegram Crypto Wallet Monitor Bot - Phase 1: Basic Setup
+Migration from Slack to Telegram
 """
 
 import os
 import logging
 import asyncio
-from typing import Set
+from typing import List, Set
 from telegram import Update, BotCommand
 from telegram.ext import (
     Application, 
@@ -17,7 +17,6 @@ from telegram.ext import (
     ContextTypes
 )
 from dotenv import load_dotenv
-from wallet_manager import WalletManager
 
 # Load environment variables
 load_dotenv()
@@ -38,13 +37,9 @@ class TelegramCryptoBot:
         self.token = os.getenv('TELEGRAM_BOT_TOKEN')
         self.target_chat_id = os.getenv('TELEGRAM_CHAT_ID')
         self.authorized_users = self._load_authorized_users()
-        self.admin_users = self._load_admin_users()
         
         if not self.token:
             raise ValueError("TELEGRAM_BOT_TOKEN not found in environment variables")
-        
-        # Initialize wallet manager
-        self.wallet_manager = WalletManager()
         
         # Initialize application
         self.application = Application.builder().token(self.token).build()
@@ -63,18 +58,6 @@ class TelegramCryptoBot:
             logger.error(f"Invalid AUTHORIZED_USERS format: {e}")
             return set()
     
-    def _load_admin_users(self) -> Set[int]:
-        """Load admin user IDs from environment"""
-        admin_users = os.getenv('ADMIN_USERS', '')
-        if not admin_users:
-            return set()
-        
-        try:
-            return {int(user_id.strip()) for user_id in admin_users.split(',')}
-        except ValueError as e:
-            logger.error(f"Invalid ADMIN_USERS format: {e}")
-            return set()
-    
     def _setup_handlers(self):
         """Setup command and message handlers"""
         # Command handlers
@@ -86,7 +69,7 @@ class TelegramCryptoBot:
         self.application.add_handler(CommandHandler("remove", self.remove_command))
         self.application.add_handler(CommandHandler("status", self.status_command))
         
-        # Message handler for non-commands
+        # Message handler for non-commands (debugging)
         self.application.add_handler(
             MessageHandler(filters.TEXT & ~filters.COMMAND, self.handle_message)
         )
@@ -96,12 +79,6 @@ class TelegramCryptoBot:
         if not self.authorized_users:  # If no users set, allow all (setup mode)
             return True
         return user_id in self.authorized_users
-    
-    async def is_admin(self, user_id: int) -> bool:
-        """Check if user is admin"""
-        if not self.admin_users:  # If no admins set, all authorized users are admins
-            return await self.is_authorized(user_id)
-        return user_id in self.admin_users
     
     async def start_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Handle /start command"""
@@ -116,33 +93,23 @@ class TelegramCryptoBot:
             )
             return
         
-        wallet_count = self.wallet_manager.get_wallet_count()
-        is_admin = await self.is_admin(user.id)
-        
         welcome_message = f"""
 🤖 **Crypto Wallet Monitor Bot**
 
 Welcome {user.first_name}! This bot monitors USDT TRC20 wallet balances.
 
-**📊 Current Status:**
-- Configured wallets: {wallet_count}
-- Your access: {'🔧 Admin' if is_admin else '👤 User'}
-
-**💰 Balance Commands:**
-/check - Check all wallet balances
-/check WalletName - Check specific wallet
-/list - List all configured wallets
-
-**🔧 Management Commands:** {'(Admin only)' if not is_admin else ''}
-/add Company WalletName Address - Add new wallet
-/remove WalletName - Remove wallet
-
-**ℹ️ Info Commands:**
+**Available Commands:**
 /help - Show all commands
-/status - Bot status and info
+/check - Check wallet balances
+/list - List all wallets
+/add - Add new wallet
+/remove - Remove wallet
+/status - Bot status
 
-**Example:**
-`/add KZP MainStore TNZkbytSMdaRJ79CYzv8BGK6LWNmQxcuM8`
+**Chat Info:**
+- Chat ID: `{chat.id}`
+- User ID: `{user.id}`
+- Username: @{user.username or 'N/A'}
         """
         
         await update.message.reply_text(welcome_message, parse_mode='Markdown')
@@ -153,139 +120,97 @@ Welcome {user.first_name}! This bot monitors USDT TRC20 wallet balances.
             await update.message.reply_text("❌ Access denied.")
             return
         
-        is_admin = await self.is_admin(update.effective_user.id)
-        
         help_text = """
 📋 **Available Commands:**
 
-**💰 Balance Commands:**
+**Balance Commands:**
 /check - Check all wallet balances
-/check WalletName - Check specific wallet balance
+/check WalletName - Check specific wallet
 /list - Show all configured wallets
 
-**🔧 Management Commands:**
+**Management Commands:**
 /add Company WalletName Address - Add new wallet
 /remove WalletName - Remove wallet
 
-**ℹ️ Info Commands:**
-/help - Show this help message
-/status - Show bot status and information
+**Info Commands:**
+/help - Show this help
+/status - Bot status and info
 
-**📝 Examples:**
+**Examples:**
 `/add KZP MainStore TNZkbytSMdaRJ79CYzv8BGK6LWNmQxcuM8`
 `/check MainStore`
 `/remove MainStore`
 
-**📌 Notes:**
-• Only TRC20 USDT wallets are supported
-• Wallet addresses must start with 'T' and be 34 characters
-• Daily reports are sent automatically at 12:00 AM GMT+7
+**Note:** Only TRC20 USDT wallets are supported.
         """
-        
-        if not is_admin:
-            help_text += "\n**⚠️ You have user access only. Contact admin to add/remove wallets.**"
         
         await update.message.reply_text(help_text, parse_mode='Markdown')
     
     async def check_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        """Handle /check command - now with real functionality"""
+        """Handle /check command - placeholder for Phase 3"""
         if not await self.is_authorized(update.effective_user.id):
             await update.message.reply_text("❌ Access denied.")
             return
         
-        # Show "checking..." message first
-        checking_msg = await update.message.reply_text("🔍 Checking wallet balances...")
+        # Placeholder - will be implemented in Phase 3
+        wallet_name = ' '.join(context.args) if context.args else None
         
-        try:
-            wallet_name = ' '.join(context.args) if context.args else None
-            result = await self.wallet_manager.check_wallet_balance(wallet_name)
-            
-            # Update the message with results
-            await checking_msg.edit_text(result, parse_mode='Markdown')
-            
-        except Exception as e:
-            logger.error(f"Error in check command: {e}")
-            await checking_msg.edit_text("❌ Failed to check wallet balances. Please try again.")
+        if wallet_name:
+            message = f"🔍 Checking balance for wallet: {wallet_name}\n\n⚠️ Feature coming in Phase 3!"
+        else:
+            message = "🔍 Checking all wallet balances...\n\n⚠️ Feature coming in Phase 3!"
+        
+        await update.message.reply_text(message)
     
     async def list_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        """Handle /list command - now with real functionality"""
+        """Handle /list command - placeholder for Phase 3"""
         if not await self.is_authorized(update.effective_user.id):
             await update.message.reply_text("❌ Access denied.")
             return
         
-        try:
-            result = self.wallet_manager.list_wallets()
-            await update.message.reply_text(result, parse_mode='Markdown')
-            
-        except Exception as e:
-            logger.error(f"Error in list command: {e}")
-            await update.message.reply_text("❌ Failed to list wallets. Please try again.")
+        await update.message.reply_text("📋 Listing all wallets...\n\n⚠️ Feature coming in Phase 3!")
     
     async def add_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        """Handle /add command - now with real functionality"""
+        """Handle /add command - placeholder for Phase 3"""
         if not await self.is_authorized(update.effective_user.id):
             await update.message.reply_text("❌ Access denied.")
-            return
-        
-        # Check admin permissions
-        if not await self.is_admin(update.effective_user.id):
-            await update.message.reply_text("❌ Admin access required to add wallets.")
             return
         
         if len(context.args) < 3:
             await update.message.reply_text(
-                "❌ **Usage:** `/add Company WalletName Address`\n\n"
-                "**Example:** `/add KZP MainStore TNZkbytSMdaRJ79CYzv8BGK6LWNmQxcuM8`\n\n"
-                "**Note:** Address must be a valid TRC20 address (starts with 'T', 34 characters)",
+                "❌ Usage: `/add Company WalletName Address`\n\n"
+                "Example: `/add KZP MainStore TNZkbytSMdaRJ79CYzv8BGK6LWNmQxcuM8`",
                 parse_mode='Markdown'
             )
             return
         
         company, wallet_name, address = context.args[0], context.args[1], context.args[2]
-        
-        try:
-            success, message = self.wallet_manager.add_wallet(company, wallet_name, address)
-            await update.message.reply_text(message)
-            
-            if success:
-                logger.info(f"Wallet added by user {update.effective_user.id}: {company} - {wallet_name}")
-            
-        except Exception as e:
-            logger.error(f"Error in add command: {e}")
-            await update.message.reply_text("❌ Failed to add wallet. Please try again.")
+        await update.message.reply_text(
+            f"➕ Adding wallet:\n"
+            f"Company: {company}\n"
+            f"Name: {wallet_name}\n"
+            f"Address: {address}\n\n"
+            f"⚠️ Feature coming in Phase 3!"
+        )
     
     async def remove_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        """Handle /remove command - now with real functionality"""
+        """Handle /remove command - placeholder for Phase 3"""
         if not await self.is_authorized(update.effective_user.id):
             await update.message.reply_text("❌ Access denied.")
             return
         
-        # Check admin permissions
-        if not await self.is_admin(update.effective_user.id):
-            await update.message.reply_text("❌ Admin access required to remove wallets.")
-            return
-        
         if not context.args:
             await update.message.reply_text(
-                "❌ **Usage:** `/remove WalletName`\n\n"
-                "**Example:** `/remove MainStore`\n\n"
-                "Use `/list` to see available wallets.",
+                "❌ Usage: `/remove WalletName`\n\n"
+                "Example: `/remove MainStore`",
                 parse_mode='Markdown'
             )
             return
         
         wallet_name = ' '.join(context.args)
-        
-        try:
-            success, message = self.wallet_manager.remove_wallet(wallet_name)
-            await update.message.reply_text(message)
-            
-            if success:
-                logger.info(f"Wallet removed by user {update.effective_user.id}: {wallet_name}")
-            
-        except Exception as e:
-            logger.error(f"Error in remove command: {e}")
-            await update.message.reply_text("❌ Failed to remove wallet. Please try again.")
+        await update.message.reply_text(
+            f"🗑️ Removing wallet: {wallet_name}\n\n⚠️ Feature coming in Phase 3!"
+        )
     
     async def status_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Handle /status command"""
@@ -295,48 +220,36 @@ Welcome {user.first_name}! This bot monitors USDT TRC20 wallet balances.
         
         bot_info = await context.bot.get_me()
         chat = update.effective_chat
-        user = update.effective_user
-        
-        wallet_count = self.wallet_manager.get_wallet_count()
-        is_admin = await self.is_admin(user.id)
         
         status_message = f"""
 🤖 **Bot Status**
 
-**🔧 Bot Info:**
+**Bot Info:**
 - Name: {bot_info.first_name}
 - Username: @{bot_info.username}
 - ID: {bot_info.id}
 
-**💬 Current Chat:**
+**Current Chat:**
 - Chat ID: `{chat.id}`
 - Chat Type: {chat.type}
 - Title: {chat.title or 'N/A'}
 
-**👤 Your Access:**
-- User ID: `{user.id}`
-- Username: @{user.username or 'N/A'}
-- Access Level: {'🔧 Admin' if is_admin else '👤 User'}
-- Status: ✅ Authorized
+**Authorization:**
+- Authorized Users: {len(self.authorized_users) if self.authorized_users else 'All users (setup mode)'}
+- Your Access: ✅ Authorized
 
-**💰 Wallet Data:**
-- Configured Wallets: {wallet_count}
-- Storage: `wallets.json`
-- History: `wallet_balances.csv`
-
-**📊 Features Status:**
-- ✅ Real-time balance checking
-- ✅ Wallet management (add/remove)
-- ✅ CSV historical logging
-- ✅ Daily reports (12:00 AM GMT+7)
-- ✅ User authorization
-- ✅ Admin controls
+**Phase Status:**
+- Phase 1: ✅ Complete (Setup & Auth)
+- Phase 2: ⚠️ In Progress (Commands)
+- Phase 3: ⏳ Pending (Core Features)
+- Phase 4: ⏳ Pending (Telegram Adaptations)
+- Phase 5: ⏳ Pending (Deployment)
         """
         
         await update.message.reply_text(status_message, parse_mode='Markdown')
     
     async def handle_message(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        """Handle non-command messages"""
+        """Handle non-command messages (for debugging)"""
         user = update.effective_user
         chat = update.effective_chat
         
@@ -348,19 +261,16 @@ Welcome {user.first_name}! This bot monitors USDT TRC20 wallet balances.
                 "ℹ️ I only respond to commands. Type /help to see available commands."
             )
     
-    async def send_daily_report(self):
-        """Send daily report to configured chat"""
+    async def send_daily_report(self, message: str):
+        """Send daily report to configured chat (placeholder for Phase 3)"""
         if not self.target_chat_id:
             logger.error("TELEGRAM_CHAT_ID not configured")
             return
         
         try:
-            logger.info("Generating daily report...")
-            report = await self.wallet_manager.generate_daily_report()
-            
             await self.application.bot.send_message(
                 chat_id=self.target_chat_id,
-                text=report,
+                text=message,
                 parse_mode='Markdown'
             )
             logger.info("Daily report sent successfully")
@@ -374,8 +284,8 @@ Welcome {user.first_name}! This bot monitors USDT TRC20 wallet balances.
             BotCommand("help", "Show all available commands"),
             BotCommand("check", "Check wallet balances"),
             BotCommand("list", "List all configured wallets"),
-            BotCommand("add", "Add a new wallet (admin only)"),
-            BotCommand("remove", "Remove a wallet (admin only)"),
+            BotCommand("add", "Add a new wallet"),
+            BotCommand("remove", "Remove a wallet"),
             BotCommand("status", "Show bot status"),
         ]
         
@@ -384,7 +294,7 @@ Welcome {user.first_name}! This bot monitors USDT TRC20 wallet balances.
     
     async def run(self):
         """Start the bot"""
-        logger.info("Starting Telegram Crypto Bot with full wallet functionality...")
+        logger.info("Starting Telegram Crypto Bot...")
         
         # Set up bot commands
         await self.setup_bot_commands()
@@ -394,7 +304,7 @@ Welcome {user.first_name}! This bot monitors USDT TRC20 wallet balances.
         await self.application.start()
         await self.application.updater.start_polling()
         
-        logger.info("Bot is running with real wallet functionality! Press Ctrl+C to stop.")
+        logger.info("Bot is running! Press Ctrl+C to stop.")
         
         # Keep the bot running
         try:

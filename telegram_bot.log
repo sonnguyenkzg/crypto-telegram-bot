@@ -1211,3 +1211,17 @@ UnboundLocalError: cannot access local variable 'not_found' where it is not asso
 2025-06-23 23:39:41,323 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
 2025-06-23 23:39:41,324 - telegram.ext.Application - INFO - Application.stop() complete
 2025-06-23 23:39:41,327 - bot.utils.config - INFO - Bot shutdown completed
+2025-06-23 23:41:35,077 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getMe "HTTP/1.1 200 OK"
+2025-06-23 23:41:35,078 - bot.services.wallet_service - INFO - Loaded 9 wallets from wallets.json
+2025-06-23 23:41:35,078 - bot.services.daily_report_service - INFO - Generating daily report for 9 wallets
+2025-06-23 23:41:35,809 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 23:41:36,562 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 356053.855823 USDT
+2025-06-23 23:41:37,295 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 23:41:38,019 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 230411.622128 USDT
+2025-06-23 23:41:38,734 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7938.576464 USDT
+2025-06-23 23:41:39,459 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 4.273452 USDT
+2025-06-23 23:41:40,193 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 15254.16834 USDT
+2025-06-23 23:41:40,942 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.52 USDT
+2025-06-23 23:41:41,651 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 23:41:41,651 - bot.services.daily_report_service - INFO - Daily report generated successfully: 9/9 wallets, Total: 650,551.28 USDT
+2025-06-23 23:41:42,307 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"

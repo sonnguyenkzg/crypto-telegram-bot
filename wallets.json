@@ -43,10 +43,5 @@
     "company": "KZP",
     "wallet": "KZP KZO1",
     "address": "TDj1whxgFJSGktyv9yLR3wZUm5gNK8X7m2"
-  },
-  "KZP TEST1": {
-    "company": "KZP",
-    "wallet": "KZP TEST1",
-    "address": "TNewAddressStartsWithT123456789012"
   }
 }

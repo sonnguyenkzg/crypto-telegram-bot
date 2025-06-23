@@ -421,3 +421,442 @@
 2025-06-23 05:55:37,142 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
 2025-06-23 05:55:37,143 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
 2025-06-23 05:55:37,143 - telegram.ext.Application - INFO - Application.stop() complete
+2025-06-23 05:57:52,836 - bot.utils.config - INFO - Configuration validated successfully
+2025-06-23 05:57:52,836 - bot.utils.handler_registry - INFO - Registered handler for command: /start
+2025-06-23 05:57:52,836 - bot.utils.handler_registry - INFO - Registered handler for command: /help
+2025-06-23 05:57:52,836 - bot.utils.handler_registry - INFO - Registered handler for command: /list
+2025-06-23 05:57:52,836 - bot.utils.handler_registry - INFO - Registered handler for command: /add
+2025-06-23 05:57:52,836 - bot.utils.handler_registry - INFO - Registered handler for command: /check
+2025-06-23 05:57:52,836 - bot.utils.config - INFO - Command handlers setup completed
+2025-06-23 05:57:52,885 - bot.utils.handler_registry - INFO - Added Telegram handler for /start
+2025-06-23 05:57:52,885 - bot.utils.handler_registry - INFO - Added Telegram handler for /help
+2025-06-23 05:57:52,885 - bot.utils.handler_registry - INFO - Added Telegram handler for /list
+2025-06-23 05:57:52,886 - bot.utils.handler_registry - INFO - Added Telegram handler for /add
+2025-06-23 05:57:52,886 - bot.utils.handler_registry - INFO - Added Telegram handler for /check
+2025-06-23 05:57:52,886 - bot.utils.handler_registry - INFO - Total handlers registered with application: 5
+2025-06-23 05:57:52,886 - bot.utils.config - INFO - Environment: DEV
+2025-06-23 05:57:52,886 - bot.utils.config - INFO - Authorized users: 1
+2025-06-23 05:57:52,886 - bot.utils.config - INFO - Registered commands: start, help, list, add, check
+2025-06-23 05:57:52,886 - bot.utils.config - INFO - Starting Telegram bot...
+2025-06-23 05:57:53,381 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getMe "HTTP/1.1 200 OK"
+2025-06-23 05:57:53,557 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/deleteWebhook "HTTP/1.1 200 OK"
+2025-06-23 05:57:53,558 - telegram.ext.Application - INFO - Application started
+2025-06-23 05:58:00,642 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:58:00,644 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 05:58:00,644 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 05:58:01,316 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 05:58:02,304 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 05:58:03,192 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 56053.855823 USDT
+2025-06-23 05:58:03,938 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 05:58:04,821 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 05:58:05,540 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 05:58:06,258 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 2.903452 USDT
+2025-06-23 05:58:06,967 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 18330.16834 USDT
+2025-06-23 05:58:07,787 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.22 USDT
+2025-06-23 05:58:08,503 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 05:58:09,207 - bot.services.balance_service - WARNING - No token data found for address TNewAddressStartsWithT123456789012
+2025-06-23 05:58:09,209 - bot.services.balance_service - INFO - Fetched balance for KZP TEST1: 0.0 USDT
+2025-06-23 05:58:09,871 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 05:58:09,872 - bot.handlers.base_handler - INFO - Check command completed for user Son, 10/10 wallets successful
+2025-06-23 05:58:10,811 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:58:20,997 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:58:27,259 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:58:27,260 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 05:58:27,260 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 05:58:27,917 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 05:58:28,635 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 05:58:28,980 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 05:58:28,981 - bot.handlers.base_handler - INFO - Check command completed for user Son, 1/1 wallets successful
+2025-06-23 05:58:33,339 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:58:33,341 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 05:58:33,341 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 05:58:33,684 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 05:58:34,392 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 05:58:35,120 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 56053.855823 USDT
+2025-06-23 05:58:35,873 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 05:58:36,603 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 05:58:37,317 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 05:58:38,037 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 2.903452 USDT
+2025-06-23 05:58:38,758 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 18330.16834 USDT
+2025-06-23 05:58:39,475 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.22 USDT
+2025-06-23 05:58:40,607 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 05:58:41,322 - bot.services.balance_service - WARNING - No token data found for address TNewAddressStartsWithT123456789012
+2025-06-23 05:58:41,323 - bot.services.balance_service - INFO - Fetched balance for KZP TEST1: 0.0 USDT
+2025-06-23 05:58:41,988 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 05:58:41,988 - bot.handlers.base_handler - INFO - Check command completed for user Son, 10/10 wallets successful
+2025-06-23 05:58:43,502 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:58:51,181 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:58:51,183 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 05:58:51,183 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 05:58:51,842 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 05:58:52,558 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 05:58:52,894 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 05:58:52,895 - bot.handlers.base_handler - INFO - Check command completed for user Son, 1/1 wallets successful
+2025-06-23 05:58:58,857 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:58:58,858 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 05:58:58,859 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 05:58:59,536 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 05:59:00,264 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 05:59:00,996 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 05:59:01,340 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 05:59:01,341 - bot.handlers.base_handler - INFO - Check command completed for user Son, 2/2 wallets successful
+2025-06-23 05:59:09,018 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:59:18,230 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:59:18,232 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 05:59:18,233 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 05:59:18,946 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 05:59:28,393 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:59:38,554 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:59:48,718 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 05:59:58,879 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:00:09,055 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:00:19,217 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:00:29,382 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:00:39,543 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:00:49,703 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:00:59,864 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:01:10,025 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:01:20,188 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:01:25,162 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:01:25,162 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-06-23 06:01:25,162 - telegram.ext.Application - INFO - Application.stop() complete
+2025-06-23 06:01:38,190 - bot.utils.config - INFO - Configuration validated successfully
+2025-06-23 06:01:38,190 - bot.utils.handler_registry - INFO - Registered handler for command: /start
+2025-06-23 06:01:38,190 - bot.utils.handler_registry - INFO - Registered handler for command: /help
+2025-06-23 06:01:38,191 - bot.utils.handler_registry - INFO - Registered handler for command: /list
+2025-06-23 06:01:38,191 - bot.utils.handler_registry - INFO - Registered handler for command: /add
+2025-06-23 06:01:38,191 - bot.utils.handler_registry - INFO - Registered handler for command: /check
+2025-06-23 06:01:38,191 - bot.utils.config - INFO - Command handlers setup completed
+2025-06-23 06:01:38,259 - bot.utils.handler_registry - INFO - Added Telegram handler for /start
+2025-06-23 06:01:38,260 - bot.utils.handler_registry - INFO - Added Telegram handler for /help
+2025-06-23 06:01:38,260 - bot.utils.handler_registry - INFO - Added Telegram handler for /list
+2025-06-23 06:01:38,260 - bot.utils.handler_registry - INFO - Added Telegram handler for /add
+2025-06-23 06:01:38,260 - bot.utils.handler_registry - INFO - Added Telegram handler for /check
+2025-06-23 06:01:38,260 - bot.utils.handler_registry - INFO - Total handlers registered with application: 5
+2025-06-23 06:01:38,260 - bot.utils.config - INFO - Environment: DEV
+2025-06-23 06:01:38,260 - bot.utils.config - INFO - Authorized users: 1
+2025-06-23 06:01:38,260 - bot.utils.config - INFO - Registered commands: start, help, list, add, check
+2025-06-23 06:01:38,260 - bot.utils.config - INFO - Starting Telegram bot...
+2025-06-23 06:01:38,744 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getMe "HTTP/1.1 200 OK"
+2025-06-23 06:01:38,904 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/deleteWebhook "HTTP/1.1 200 OK"
+2025-06-23 06:01:38,905 - telegram.ext.Application - INFO - Application started
+2025-06-23 06:01:49,392 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:01:59,554 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:02:02,914 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:02:02,915 - bot.handlers.base_handler - INFO - Start command received from user Son (ID: 5005604119)
+2025-06-23 06:02:03,588 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:02:03,589 - bot.handlers.base_handler - INFO - Welcome message sent to authorized user Son
+2025-06-23 06:02:07,823 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:02:08,183 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:02:08,184 - bot.handlers.base_handler - INFO - Help command processed for user Son
+2025-06-23 06:02:14,466 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:02:14,468 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:02:14,468 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:02:15,145 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:02:15,917 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 06:02:16,658 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 56053.855823 USDT
+2025-06-23 06:02:17,452 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 06:02:18,167 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:02:18,961 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 06:02:19,678 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 2.903452 USDT
+2025-06-23 06:02:20,503 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 18330.16834 USDT
+2025-06-23 06:02:21,217 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.22 USDT
+2025-06-23 06:02:21,932 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 06:02:22,637 - bot.services.balance_service - WARNING - No token data found for address TNewAddressStartsWithT123456789012
+2025-06-23 06:02:22,638 - bot.services.balance_service - INFO - Fetched balance for KZP TEST1: 0.0 USDT
+2025-06-23 06:02:23,298 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:02:23,299 - bot.handlers.base_handler - INFO - Check command completed for user Son: 10/10 wallets successful
+2025-06-23 06:02:24,628 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:02:34,794 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:02:35,279 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:02:35,950 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:02:35,951 - bot.handlers.base_handler - INFO - Help command processed for user Son
+2025-06-23 06:02:38,779 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:02:38,781 - bot.handlers.base_handler - INFO - List command received from user Son (ID: 5005604119)
+2025-06-23 06:02:38,781 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:02:39,133 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:02:39,134 - bot.handlers.base_handler - INFO - List command processed for user Son, 10 wallets shown
+2025-06-23 06:02:48,941 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:02:59,101 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:03:09,264 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:03:19,428 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:03:29,590 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:03:39,755 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:03:49,917 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:04:00,079 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:04:10,239 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:04:20,401 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:04:30,562 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:04:40,722 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:04:50,884 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:05:01,044 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:05:07,409 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:05:07,410 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-06-23 06:05:07,410 - telegram.ext.Application - INFO - Application.stop() complete
+2025-06-23 06:05:10,412 - bot.utils.config - INFO - Configuration validated successfully
+2025-06-23 06:05:10,413 - bot.utils.handler_registry - INFO - Registered handler for command: /start
+2025-06-23 06:05:10,413 - bot.utils.handler_registry - INFO - Registered handler for command: /help
+2025-06-23 06:05:10,413 - bot.utils.handler_registry - INFO - Registered handler for command: /list
+2025-06-23 06:05:10,413 - bot.utils.handler_registry - INFO - Registered handler for command: /add
+2025-06-23 06:05:10,413 - bot.utils.handler_registry - INFO - Registered handler for command: /check
+2025-06-23 06:05:10,414 - bot.utils.config - INFO - Command handlers setup completed
+2025-06-23 06:05:10,464 - bot.utils.handler_registry - INFO - Added Telegram handler for /start
+2025-06-23 06:05:10,464 - bot.utils.handler_registry - INFO - Added Telegram handler for /help
+2025-06-23 06:05:10,465 - bot.utils.handler_registry - INFO - Added Telegram handler for /list
+2025-06-23 06:05:10,465 - bot.utils.handler_registry - INFO - Added Telegram handler for /add
+2025-06-23 06:05:10,465 - bot.utils.handler_registry - INFO - Added Telegram handler for /check
+2025-06-23 06:05:10,465 - bot.utils.handler_registry - INFO - Total handlers registered with application: 5
+2025-06-23 06:05:10,465 - bot.utils.config - INFO - Environment: DEV
+2025-06-23 06:05:10,465 - bot.utils.config - INFO - Authorized users: 1
+2025-06-23 06:05:10,465 - bot.utils.config - INFO - Registered commands: start, help, list, add, check
+2025-06-23 06:05:10,466 - bot.utils.config - INFO - Starting Telegram bot...
+2025-06-23 06:05:10,948 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getMe "HTTP/1.1 200 OK"
+2025-06-23 06:05:11,109 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/deleteWebhook "HTTP/1.1 200 OK"
+2025-06-23 06:05:11,110 - telegram.ext.Application - INFO - Application started
+2025-06-23 06:05:15,330 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:05:15,332 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:05:15,332 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:05:15,685 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:05:16,469 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 06:05:17,207 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 56053.855823 USDT
+2025-06-23 06:05:17,988 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 06:05:18,709 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:05:19,426 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 06:05:20,220 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 2.903452 USDT
+2025-06-23 06:05:20,970 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 18330.16834 USDT
+2025-06-23 06:05:21,724 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.22 USDT
+2025-06-23 06:05:22,430 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 06:05:23,134 - bot.services.balance_service - WARNING - No token data found for address TNewAddressStartsWithT123456789012
+2025-06-23 06:05:23,135 - bot.services.balance_service - INFO - Fetched balance for KZP TEST1: 0.0 USDT
+2025-06-23 06:05:23,814 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:05:23,816 - bot.handlers.base_handler - INFO - Check command completed for user Son, 10/10 wallets successful
+2025-06-23 06:05:25,491 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:05:35,653 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:05:45,814 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:05:54,184 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:05:54,186 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:05:54,186 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:05:54,851 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:06:04,346 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:06:12,543 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:06:12,545 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:06:12,545 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:06:13,215 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:06:22,708 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:06:32,873 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:06:43,035 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:06:48,250 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:06:48,252 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:06:48,252 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:06:48,923 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:06:49,668 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:06:50,415 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 06:06:50,763 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:06:50,764 - bot.handlers.base_handler - INFO - Check command completed for user Son, 2/2 wallets successful
+2025-06-23 06:06:58,412 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:07:08,577 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:07:18,737 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:07:28,896 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:07:39,059 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:07:49,225 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:07:58,096 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:07:58,098 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-06-23 06:07:58,099 - telegram.ext.Application - INFO - Application.stop() complete
+2025-06-23 06:08:45,795 - bot.utils.config - INFO - Configuration validated successfully
+2025-06-23 06:08:45,795 - bot.utils.handler_registry - INFO - Registered handler for command: /start
+2025-06-23 06:08:45,795 - bot.utils.handler_registry - INFO - Registered handler for command: /help
+2025-06-23 06:08:45,795 - bot.utils.handler_registry - INFO - Registered handler for command: /list
+2025-06-23 06:08:45,796 - bot.utils.handler_registry - INFO - Registered handler for command: /add
+2025-06-23 06:08:45,796 - bot.utils.handler_registry - INFO - Registered handler for command: /check
+2025-06-23 06:08:45,796 - bot.utils.config - INFO - Command handlers setup completed
+2025-06-23 06:08:45,848 - bot.utils.handler_registry - INFO - Added Telegram handler for /start
+2025-06-23 06:08:45,849 - bot.utils.handler_registry - INFO - Added Telegram handler for /help
+2025-06-23 06:08:45,849 - bot.utils.handler_registry - INFO - Added Telegram handler for /list
+2025-06-23 06:08:45,849 - bot.utils.handler_registry - INFO - Added Telegram handler for /add
+2025-06-23 06:08:45,849 - bot.utils.handler_registry - INFO - Added Telegram handler for /check
+2025-06-23 06:08:45,849 - bot.utils.handler_registry - INFO - Total handlers registered with application: 5
+2025-06-23 06:08:45,849 - bot.utils.config - INFO - Environment: DEV
+2025-06-23 06:08:45,850 - bot.utils.config - INFO - Authorized users: 1
+2025-06-23 06:08:45,850 - bot.utils.config - INFO - Registered commands: start, help, list, add, check
+2025-06-23 06:08:45,850 - bot.utils.config - INFO - Starting Telegram bot...
+2025-06-23 06:08:46,338 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getMe "HTTP/1.1 200 OK"
+2025-06-23 06:08:46,498 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/deleteWebhook "HTTP/1.1 200 OK"
+2025-06-23 06:08:46,499 - telegram.ext.Application - INFO - Application started
+2025-06-23 06:08:57,014 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:08:58,606 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:08:58,607 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:08:58,608 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:08:59,322 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:09:00,047 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:09:00,756 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 06:09:01,096 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:09:01,097 - bot.handlers.base_handler - INFO - Check command completed for user Son, 2/2 wallets successful
+2025-06-23 06:09:07,107 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:09:07,108 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:09:07,108 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:09:07,801 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:09:08,547 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:09:08,888 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:09:08,891 - bot.handlers.base_handler - INFO - Check command completed for user Son, 1/1 wallets successful
+2025-06-23 06:09:17,268 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:09:22,294 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:09:22,295 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:09:22,295 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:09:22,295 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_application.py", line 1234, in process_update
+    await coroutine
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/bot/handlers/check_handler.py", line 188, in handle
+    checking_message = await update.message.reply_text("🔄 Checking balances...")
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'reply_text'
+2025-06-23 06:09:32,468 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:09:42,644 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:09:51,003 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:09:51,004 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-06-23 06:09:51,004 - telegram.ext.Application - INFO - Application.stop() complete
+2025-06-23 06:10:52,664 - bot.utils.config - INFO - Configuration validated successfully
+2025-06-23 06:10:52,665 - bot.utils.handler_registry - INFO - Registered handler for command: /start
+2025-06-23 06:10:52,665 - bot.utils.handler_registry - INFO - Registered handler for command: /help
+2025-06-23 06:10:52,665 - bot.utils.handler_registry - INFO - Registered handler for command: /list
+2025-06-23 06:10:52,665 - bot.utils.handler_registry - INFO - Registered handler for command: /add
+2025-06-23 06:10:52,665 - bot.utils.handler_registry - INFO - Registered handler for command: /check
+2025-06-23 06:10:52,665 - bot.utils.config - INFO - Command handlers setup completed
+2025-06-23 06:10:52,714 - bot.utils.handler_registry - INFO - Added Telegram handler for /start
+2025-06-23 06:10:52,714 - bot.utils.handler_registry - INFO - Added Telegram handler for /help
+2025-06-23 06:10:52,714 - bot.utils.handler_registry - INFO - Added Telegram handler for /list
+2025-06-23 06:10:52,714 - bot.utils.handler_registry - INFO - Added Telegram handler for /add
+2025-06-23 06:10:52,714 - bot.utils.handler_registry - INFO - Added Telegram handler for /check
+2025-06-23 06:10:52,714 - bot.utils.handler_registry - INFO - Total handlers registered with application: 5
+2025-06-23 06:10:52,714 - bot.utils.config - INFO - Environment: DEV
+2025-06-23 06:10:52,715 - bot.utils.config - INFO - Authorized users: 1
+2025-06-23 06:10:52,715 - bot.utils.config - INFO - Registered commands: start, help, list, add, check
+2025-06-23 06:10:52,715 - bot.utils.config - INFO - Starting Telegram bot...
+2025-06-23 06:10:53,200 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getMe "HTTP/1.1 200 OK"
+2025-06-23 06:10:53,362 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/deleteWebhook "HTTP/1.1 200 OK"
+2025-06-23 06:10:53,363 - telegram.ext.Application - INFO - Application started
+2025-06-23 06:11:02,453 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:11:02,454 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:11:02,454 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:11:03,161 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:11:03,941 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:11:04,289 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:11:04,290 - bot.handlers.base_handler - INFO - Check command completed for user Son, 1/1 wallets successful
+2025-06-23 06:11:12,619 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:11:16,870 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:11:16,872 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:11:16,872 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:11:17,541 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:11:18,265 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 06:11:18,609 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:11:18,610 - bot.handlers.base_handler - INFO - Check command completed for user Son, 1/1 wallets successful
+2025-06-23 06:11:26,017 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:11:26,018 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:11:26,019 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:11:26,726 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:11:27,445 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:11:28,158 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 06:11:28,505 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:11:28,506 - bot.handlers.base_handler - INFO - Check command completed for user Son, 2/2 wallets successful
+2025-06-23 06:11:31,276 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:11:31,277 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:11:31,278 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:11:31,623 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:11:32,666 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 06:11:33,382 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 56053.855823 USDT
+2025-06-23 06:11:34,092 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 06:11:34,819 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:11:35,545 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 06:11:36,257 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 2.903452 USDT
+2025-06-23 06:11:36,976 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 18330.16834 USDT
+2025-06-23 06:11:37,689 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.22 USDT
+2025-06-23 06:11:38,397 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 06:11:39,125 - bot.services.balance_service - WARNING - No token data found for address TNewAddressStartsWithT123456789012
+2025-06-23 06:11:39,126 - bot.services.balance_service - INFO - Fetched balance for KZP TEST1: 0.0 USDT
+2025-06-23 06:11:39,126 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_application.py", line 1234, in process_update
+    await coroutine
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/bot/handlers/check_handler.py", line 240, in handle
+    if not_found:
+       ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'not_found' where it is not associated with a value
+2025-06-23 06:11:41,438 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:11:51,599 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:12:01,761 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:12:11,921 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:12:22,116 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:12:32,277 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:12:36,364 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:12:36,365 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-06-23 06:12:36,365 - telegram.ext.Application - INFO - Application.stop() complete
+2025-06-23 06:12:52,716 - bot.utils.config - INFO - Configuration validated successfully
+2025-06-23 06:12:52,716 - bot.utils.handler_registry - INFO - Registered handler for command: /start
+2025-06-23 06:12:52,716 - bot.utils.handler_registry - INFO - Registered handler for command: /help
+2025-06-23 06:12:52,716 - bot.utils.handler_registry - INFO - Registered handler for command: /list
+2025-06-23 06:12:52,717 - bot.utils.handler_registry - INFO - Registered handler for command: /add
+2025-06-23 06:12:52,717 - bot.utils.handler_registry - INFO - Registered handler for command: /check
+2025-06-23 06:12:52,717 - bot.utils.config - INFO - Command handlers setup completed
+2025-06-23 06:12:52,784 - bot.utils.handler_registry - INFO - Added Telegram handler for /start
+2025-06-23 06:12:52,784 - bot.utils.handler_registry - INFO - Added Telegram handler for /help
+2025-06-23 06:12:52,785 - bot.utils.handler_registry - INFO - Added Telegram handler for /list
+2025-06-23 06:12:52,785 - bot.utils.handler_registry - INFO - Added Telegram handler for /add
+2025-06-23 06:12:52,785 - bot.utils.handler_registry - INFO - Added Telegram handler for /check
+2025-06-23 06:12:52,785 - bot.utils.handler_registry - INFO - Total handlers registered with application: 5
+2025-06-23 06:12:52,786 - bot.utils.config - INFO - Environment: DEV
+2025-06-23 06:12:52,786 - bot.utils.config - INFO - Authorized users: 1
+2025-06-23 06:12:52,786 - bot.utils.config - INFO - Registered commands: start, help, list, add, check
+2025-06-23 06:12:52,786 - bot.utils.config - INFO - Starting Telegram bot...
+2025-06-23 06:12:53,289 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getMe "HTTP/1.1 200 OK"
+2025-06-23 06:12:53,450 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/deleteWebhook "HTTP/1.1 200 OK"
+2025-06-23 06:12:53,452 - telegram.ext.Application - INFO - Application started
+2025-06-23 06:12:58,014 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:12:58,015 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:12:58,015 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:12:58,372 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:12:59,091 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 06:13:00,134 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 56053.855823 USDT
+2025-06-23 06:13:00,846 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 06:13:01,570 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:13:02,304 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 06:13:03,367 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 2.903452 USDT
+2025-06-23 06:13:04,095 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 18330.16834 USDT
+2025-06-23 06:13:04,857 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.22 USDT
+2025-06-23 06:13:05,568 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 06:13:06,277 - bot.services.balance_service - WARNING - No token data found for address TNewAddressStartsWithT123456789012
+2025-06-23 06:13:06,281 - bot.services.balance_service - INFO - Fetched balance for KZP TEST1: 0.0 USDT
+2025-06-23 06:13:06,951 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:13:06,952 - bot.handlers.base_handler - INFO - Check command completed for user Son, 10/10 wallets successful
+2025-06-23 06:13:08,175 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:13:13,545 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:13:13,547 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:13:13,547 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:13:14,208 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:13:14,950 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:13:15,680 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 06:13:16,022 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:13:16,023 - bot.handlers.base_handler - INFO - Check command completed for user Son, 2/2 wallets successful
+2025-06-23 06:13:20,677 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:13:20,678 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:13:20,679 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:13:21,034 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:13:21,783 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 270629.581909 USDT
+2025-06-23 06:13:22,134 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:13:22,135 - bot.handlers.base_handler - INFO - Check command completed for user Son, 1/1 wallets successful
+2025-06-23 06:13:29,494 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:13:29,495 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-23 06:13:29,496 - bot.services.wallet_service - INFO - Loaded 10 wallets from wallets.json
+2025-06-23 06:13:30,177 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 06:13:30,895 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7968.576464 USDT
+2025-06-23 06:13:31,258 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-23 06:13:31,258 - bot.handlers.base_handler - INFO - Check command completed for user Son, 1/1 wallets successful
+2025-06-23 06:13:39,657 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:13:49,393 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 06:13:49,394 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-06-23 06:13:49,394 - telegram.ext.Application - INFO - Application.stop() complete

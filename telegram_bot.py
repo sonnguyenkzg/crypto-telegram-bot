@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Telegram Crypto Wallet Monitor Bot - Step 4: Add Wallet Functionality
-Added wallet creation with strict quoted argument parsing.
+Telegram Crypto Wallet Monitor Bot - Step 5: Balance Checking
+Added USDT TRC20 balance checking with Tronscan API integration.
 """
 
 import logging
@@ -10,7 +10,7 @@ from telegram.ext import Application
 
 from bot.utils.config import Config
 from bot.utils.handler_registry import HandlerRegistry
-from bot.handlers import StartHandler, HelpHandler, ListHandler, AddHandler
+from bot.handlers import StartHandler, HelpHandler, ListHandler, AddHandler, CheckHandler
 
 # Setup logging and configuration
 logger = Config.setup_logging()
@@ -24,11 +24,13 @@ def setup_handlers() -> HandlerRegistry:
     help_handler = HelpHandler(handler_registry=registry)
     list_handler = ListHandler()
     add_handler = AddHandler()
+    check_handler = CheckHandler()
     
     registry.register_handler(start_handler)
     registry.register_handler(help_handler)
     registry.register_handler(list_handler)
     registry.register_handler(add_handler)
+    registry.register_handler(check_handler)
     
     return registry
 

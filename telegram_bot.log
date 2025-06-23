@@ -931,3 +931,76 @@ UnboundLocalError: cannot access local variable 'not_found' where it is not asso
 2025-06-23 06:21:18,009 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
 2025-06-23 06:21:28,169 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
 2025-06-23 06:21:38,331 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-23 22:59:22,983 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getMe "HTTP/1.1 200 OK"
+2025-06-23 22:59:22,985 - bot.utils.config - INFO - Bot initialized successfully: crypto-balance (@KZGTestCryptoBalanceBot)
+2025-06-23 22:59:22,985 - bot.utils.config - INFO - Sending test report...
+2025-06-23 22:59:22,985 - bot.utils.config - INFO - Starting daily report generation...
+2025-06-23 22:59:22,986 - bot.services.wallet_service - INFO - Loaded 9 wallets from wallets.json
+2025-06-23 22:59:22,986 - bot.services.daily_report_service - INFO - Generating daily report for 9 wallets
+2025-06-23 22:59:23,752 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 22:59:24,518 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 356053.855823 USDT
+2025-06-23 22:59:25,274 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 22:59:26,001 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 230411.622128 USDT
+2025-06-23 22:59:26,731 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7938.576464 USDT
+2025-06-23 22:59:27,449 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 4.273452 USDT
+2025-06-23 22:59:28,166 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 15254.16834 USDT
+2025-06-23 22:59:28,886 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.52 USDT
+2025-06-23 22:59:29,606 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 22:59:29,606 - bot.services.daily_report_service - INFO - Daily report generated successfully: 9/9 wallets, Total: 650,551.28 USDT
+2025-06-23 22:59:30,282 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 22:59:30,283 - bot.utils.config - INFO - Daily report sent successfully to chat 5005604119
+2025-06-23 23:00:55,415 - bot.utils.config - INFO - Configuration validated successfully
+2025-06-23 23:00:55,944 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getMe "HTTP/1.1 200 OK"
+2025-06-23 23:00:55,945 - bot.utils.config - INFO - Bot initialized successfully: crypto-balance (@KZGTestCryptoBalanceBot)
+2025-06-23 23:00:55,945 - bot.utils.config - INFO - === Daily Report Scheduler Started ===
+2025-06-23 23:00:55,946 - bot.utils.config - INFO - Environment: DEV
+2025-06-23 23:00:55,946 - bot.utils.config - INFO - Bot Token: ...j0BvtqHKT4
+2025-06-23 23:00:55,946 - bot.utils.config - INFO - Chat ID: 5005604119
+2025-06-23 23:00:55,946 - bot.utils.config - INFO - Current time (GMT+7): 2025-06-24 06:00:55
+2025-06-23 23:00:55,946 - bot.utils.config - INFO - Scheduled: Daily reports at 00:00 GMT+7 (midnight)
+2025-06-23 23:00:55,947 - bot.utils.config - INFO - Press Ctrl+C to stop
+2025-06-23 23:00:55,947 - bot.utils.config - INFO - =====================================
+2025-06-23 23:07:05,184 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getMe "HTTP/1.1 200 OK"
+2025-06-23 23:07:05,185 - bot.utils.config - INFO - Test bot initialized: crypto-balance
+2025-06-23 23:07:05,185 - bot.services.wallet_service - INFO - Loaded 9 wallets from wallets.json
+2025-06-23 23:07:05,185 - bot.services.daily_report_service - INFO - Generating daily report for 9 wallets
+2025-06-23 23:07:05,898 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 23:07:06,636 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 356053.855823 USDT
+2025-06-23 23:07:07,426 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 23:07:08,252 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 230411.622128 USDT
+2025-06-23 23:07:09,018 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7938.576464 USDT
+2025-06-23 23:07:09,763 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 4.273452 USDT
+2025-06-23 23:07:10,475 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 15254.16834 USDT
+2025-06-23 23:07:11,250 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.52 USDT
+2025-06-23 23:07:12,076 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 23:07:12,077 - bot.services.daily_report_service - INFO - Daily report generated successfully: 9/9 wallets, Total: 650,551.28 USDT
+2025-06-23 23:07:12,740 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 23:07:12,741 - bot.utils.config - INFO - ✅ Test report #1 sent successfully at 06:07:12
+2025-06-23 23:07:42,771 - bot.services.wallet_service - INFO - Loaded 9 wallets from wallets.json
+2025-06-23 23:07:42,771 - bot.services.daily_report_service - INFO - Generating daily report for 9 wallets
+2025-06-23 23:07:43,505 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 23:07:44,221 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 356053.855823 USDT
+2025-06-23 23:07:44,956 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 23:07:45,670 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 230411.622128 USDT
+2025-06-23 23:07:46,381 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7938.576464 USDT
+2025-06-23 23:07:47,092 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 4.273452 USDT
+2025-06-23 23:07:47,803 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 15254.16834 USDT
+2025-06-23 23:07:48,513 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.52 USDT
+2025-06-23 23:07:49,228 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 23:07:49,229 - bot.services.daily_report_service - INFO - Daily report generated successfully: 9/9 wallets, Total: 650,551.28 USDT
+2025-06-23 23:07:49,894 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 23:07:49,895 - bot.utils.config - INFO - ✅ Test report #2 sent successfully at 06:07:49
+2025-06-23 23:08:19,896 - bot.services.wallet_service - INFO - Loaded 9 wallets from wallets.json
+2025-06-23 23:08:19,896 - bot.services.daily_report_service - INFO - Generating daily report for 9 wallets
+2025-06-23 23:08:20,608 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-23 23:08:21,346 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 356053.855823 USDT
+2025-06-23 23:08:22,057 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-23 23:08:22,766 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 230411.622128 USDT
+2025-06-23 23:08:23,473 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7938.576464 USDT
+2025-06-23 23:08:24,185 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 4.273452 USDT
+2025-06-23 23:08:24,912 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 15254.16834 USDT
+2025-06-23 23:08:25,624 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.52 USDT
+2025-06-23 23:08:26,334 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-23 23:08:26,335 - bot.services.daily_report_service - INFO - Daily report generated successfully: 9/9 wallets, Total: 650,551.28 USDT
+2025-06-23 23:08:27,122 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-23 23:08:27,123 - bot.utils.config - INFO - ✅ Test report #3 sent successfully at 06:08:26

@@ -6,7 +6,6 @@ A smart Telegram bot that automatically tracks USDT (TRC20) wallet balances and 
 
 **🔄 Automatic Monitoring**: Checks your USDT wallet balances 24/7 and sends daily summary reports  
 **⚡ Real-Time Commands**: Check balance updates anytime with simple commands  
-**📊 Historical Tracking**: Keeps a record of all balance changes in CSV format  
 **🔒 Secure & Private**: Only authorized team members can use wallet commands  
 **👥 Team Collaboration**: Works in Telegram groups for shared visibility  
 
@@ -125,7 +124,6 @@ telegram-crypto-bot/
 ├── main.py                # Daily report scheduler
 ├── telegram_bot.py        # Interactive bot
 ├── wallets.json          # Wallet configuration
-├── wallet_balances.csv   # Historical data
 └── .env                  # Your configuration
 ```
 
@@ -183,8 +181,8 @@ python telegram_bot.py  # Auto-kills old instances
 # Backup wallet configuration
 cp wallets.json wallets.json.backup
 
-# Backup historical data
-cp wallet_balances.csv wallet_balances.csv.backup
+# Backup environment settings
+cp .env .env.backup
 ```
 
 ## 🐛 Troubleshooting
@@ -214,7 +212,6 @@ cp wallet_balances.csv wallet_balances.csv.backup
 ### Log Files
 - `telegram_bot.log` - Interactive bot logs
 - `daily_reports.log` - Scheduled report logs
-- `wallet_balances.csv` - Historical balance data
 
 ### Key Metrics to Monitor
 - Daily report delivery success rate

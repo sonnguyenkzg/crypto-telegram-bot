@@ -10,7 +10,7 @@ import signal
 import sys
 import time
 from telegram import Update
-from telegram.ext import Application
+from telegram.ext import Application, MessageHandler, filters
 
 from bot.utils.config import Config
 from bot.utils.handler_registry import HandlerRegistry
@@ -18,6 +18,35 @@ from bot.handlers import StartHandler, HelpHandler, ListHandler, AddHandler, Che
 
 # Setup logging and configuration
 logger = Config.setup_logging()
+
+async def handle_unknown_command(update: Update, context) -> None:
+    """Handle unknown commands that start with /."""
+    if update.message and update.message.text and update.message.text.startswith('/'):
+        command = update.message.text.split()[0]
+        
+        # Check authorization first
+        user_id = str(update.effective_user.id)
+        authorized_users = Config.get_authorized_users()
+        
+        if user_id not in authorized_users:
+            await update.message.reply_text("❌ You are not authorized to use this bot.")
+            return
+        
+        # Show unknown command message
+        unknown_message = f"""❌ Unknown command: `{command}`
+
+💡 *Available commands:*
+• `/start` - Start the bot
+• `/help` - Show all commands  
+• `/list` - Show wallets
+• `/check` - Check balances
+• `/add` - Add wallet
+• `/remove` - Remove wallet
+
+Use `/help` for detailed usage information."""
+        
+        await update.message.reply_text(unknown_message, parse_mode='Markdown')
+        logger.info(f"Unknown command '{command}' from user {update.effective_user.first_name}")
 
 def cleanup_existing_processes():
     """Clean up any existing bot processes before starting."""
@@ -129,6 +158,9 @@ def main() -> None:
         
         # Register all handlers with the application
         handler_registry.register_with_application(application)
+        
+        # Add unknown command handler (for any message starting with /)
+        application.add_handler(MessageHandler(filters.TEXT & filters.Regex(r'^/'), handle_unknown_command))
         
         # Log startup information
         logger.info("=== Bot Startup Complete ===")

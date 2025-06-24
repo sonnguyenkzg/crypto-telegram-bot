@@ -29,7 +29,7 @@ class CheckHandler(BaseHandler):
     def parse_check_arguments(self, text: str) -> List[str]:
         """
         Parse quoted arguments from check command text.
-        Handles bold text, markdown, and various quote formats like Slack version.
+        Now with STRICT quote validation - rejects unquoted text.
         
         Args:
             text: Command arguments from Telegram
@@ -48,21 +48,24 @@ class CheckHandler(BaseHandler):
         cleaned_text = re.sub(r'\*([^*]+)\*', r'\1', cleaned_text)      # Remove *italic*
         cleaned_text = re.sub(r'`([^`]+)`', r'\1', cleaned_text)        # Remove `code`
         
-        # Try multiple quote patterns to be more robust
-        inputs = []
+        # Find quoted strings - use only one pattern to avoid duplicates
+        quoted_inputs = re.findall(r'"([^"]*)"', cleaned_text)
         
-        # Pattern 1: Standard double quotes
-        standard_quotes = re.findall(r'"([^"]*)"', cleaned_text)
-        if standard_quotes:
-            inputs.extend(standard_quotes)
+        # NEW: Check if user provided unquoted text (should be rejected)
+        has_text_without_quotes = cleaned_text.strip() and not quoted_inputs
         
-        # Pattern 2: Smart quotes (in case Telegram converts them)
-        smart_quotes = re.findall(r'"([^"]*)"', cleaned_text)
-        if smart_quotes:
-            inputs.extend(smart_quotes)
+        if has_text_without_quotes:
+            # Return special marker to indicate unquoted text error
+            return ["__UNQUOTED_ERROR__"]
         
-        # Filter out empty inputs
-        return [inp.strip() for inp in inputs if inp.strip()]
+        # Filter out empty inputs and remove duplicates
+        valid_inputs = []
+        for inp in quoted_inputs:
+            cleaned_inp = inp.strip()
+            if cleaned_inp and cleaned_inp not in valid_inputs:
+                valid_inputs.append(cleaned_inp)
+        
+        return valid_inputs
     
     def resolve_wallets_to_check(self, inputs: List[str], wallet_data: Dict) -> tuple:
         """
@@ -85,16 +88,16 @@ class CheckHandler(BaseHandler):
                 
             # Check if input is a TRC20 address
             if self.balance_service.validate_trc20_address(input_str):
-                # It's an address - find the wallet name or use address as display
+                # It's an address - find the wallet name or use address as display (case-insensitive)
                 found_wallet = False
                 for wallet_name, wallet_info in wallet_data.items():
-                    if wallet_info['address'] == input_str:
-                        wallets_to_check[wallet_name] = input_str
+                    if wallet_info['address'].lower() == input_str.lower():
+                        wallets_to_check[wallet_name] = wallet_info['address']  # Use original case from JSON
                         found_wallet = True
                         break
                 
                 if not found_wallet:
-                    # Address not in our monitored list - still check it
+                    # Address not in our monitored list - still check it (use original case)
                     display_name = f"External: {input_str[:10]}...{input_str[-6:]}"
                     wallets_to_check[display_name] = input_str
             
@@ -138,20 +141,15 @@ class CheckHandler(BaseHandler):
         inputs = self.parse_check_arguments(command_text)
         not_found = []  # Initialize empty list for all cases
         
-        if not inputs:
-            # Check all wallets
-            wallets_to_check = {name: info['address'] for name, info in wallet_data.items()}
-        else:
-            # Resolve inputs to wallets
-            wallets_to_check, not_found = self.resolve_wallets_to_check(inputs, wallet_data)
-            
-            # If no quoted inputs found, show usage
-            if not inputs:
-                available_names = ', '.join(list(wallet_data.keys())[:5])
-                if len(wallet_data) > 5:
-                    available_names += "..."
+        # Check for unquoted text error
+        if inputs == ["__UNQUOTED_ERROR__"]:
+            available_names = ', '.join(list(wallet_data.keys())[:5])
+            if len(wallet_data) > 5:
+                available_names += "..."
                 
-                usage_message = f"""❌ No valid wallet names or addresses found in: `{command_text}`
+            usage_message = f"""❌ No valid wallet names or addresses found in: `{command_text}`
+
+*Note:* All wallet names and addresses must be in quotes!
 
 *Usage:*
 • `/check` - Check all wallets
@@ -165,9 +163,16 @@ class CheckHandler(BaseHandler):
 *Examples:*
 • `/check "KZP 96G1"`
 • `/check "TNZJ5wTSMK4oR79CYzy8BGK6LWNmQxcuM8"`"""
-                
-                await update.message.reply_text(usage_message, parse_mode='Markdown')
-                return
+            
+            await update.message.reply_text(usage_message, parse_mode='Markdown')
+            return
+        
+        if not inputs:
+            # Check all wallets
+            wallets_to_check = {name: info['address'] for name, info in wallet_data.items()}
+        else:
+            # Resolve inputs to wallets
+            wallets_to_check, not_found = self.resolve_wallets_to_check(inputs, wallet_data)
             
             # If no valid wallets found but we had inputs, show error
             if not wallets_to_check and not_found:

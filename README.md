@@ -41,7 +41,7 @@ A smart Telegram bot that automatically tracks USDT (TRC20) wallet balances and 
 
 4. **Start the bot**
    ```bash
-   python telegram_bot.py
+   ./start_bot.sh
    ```
 
 ## ⚙️ Configuration
@@ -90,14 +90,14 @@ The bot automatically sends daily balance reports at **12:00 AM GMT+7** to your 
 
 ### Setup Daily Reports
 ```bash
-# Start the daily report scheduler
-./start_daily_reports.sh
+# Start all services (interactive bot + daily reports)
+./start_bot.sh
 
 # Test immediate report
 python main.py test
 
 # Monitor logs
-tail -f daily_reports.log
+tail -f daily_reports.log telegram_bot.log
 ```
 
 ### Sample Daily Report
@@ -156,12 +156,14 @@ The bot works with **USDT TRC20** wallets only. Addresses must:
 
 ### Check Status
 ```bash
-# Check if bot is running
-ps aux | grep telegram_bot
+# Check if services are running
+./start_bot.sh status
 
 # View recent logs
-tail -f telegram_bot.log
-tail -f daily_reports.log
+./start_bot.sh logs
+
+# Check process details
+ps aux | grep python
 
 # Check wallet count
 python -c "import json; print(f'Wallets: {len(json.load(open(\"wallets.json\")))}')"
@@ -169,11 +171,12 @@ python -c "import json; print(f'Wallets: {len(json.load(open(\"wallets.json\")))
 
 ### Restart Services
 ```bash
-# Restart interactive bot
-python telegram_bot.py  # Auto-kills old instances
+# Restart all services
+./start_bot.sh restart
 
-# Restart daily reports
-./start_daily_reports.sh
+# Or manually restart individual services
+./start_bot.sh stop
+./start_bot.sh
 ```
 
 ### Backup Important Files
@@ -188,12 +191,12 @@ cp .env .env.backup
 ## 🐛 Troubleshooting
 
 **Bot not responding?**
-- Check if it's running: `ps aux | grep telegram_bot`
-- Check logs: `tail -f telegram_bot.log`
-- Restart: `python telegram_bot.py`
+- Check if it's running: `./start_bot.sh status`
+- Check logs: `./start_bot.sh logs`
+- Restart: `./start_bot.sh restart`
 
 **Daily reports not working?**
-- Check scheduler: `ps aux | grep main.py`
+- Check scheduler: `./start_bot.sh status`
 - Test manually: `python main.py test`
 - Check logs: `tail -f daily_reports.log`
 
@@ -225,8 +228,9 @@ cp .env .env.backup
 2. **Add the bot** to the group
 3. **Get group chat ID** using provided scripts
 4. **Add team member user IDs** to `.env`
-5. **Test all commands** work for authorized users
-6. **Verify daily reports** are delivered to group
+5. **Start all services** with `./start_bot.sh`
+6. **Test all commands** work for authorized users
+7. **Verify daily reports** are delivered to group
 
 ## 📞 Support
 

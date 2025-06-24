@@ -72,10 +72,443 @@
 2025-06-24 08:58:55,688 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
 2025-06-24 08:59:05,849 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
 2025-06-24 08:59:16,012 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
-UZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
-2025-06-24 08:58:25,206 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
-2025-06-24 08:58:35,367 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
-2025-06-24 08:58:45,527 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
-2025-06-24 08:58:55,688 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
-2025-06-24 08:59:05,849 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
-2025-06-24 08:59:16,012 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 08:59:26,174 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 08:59:36,335 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 08:59:46,495 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 08:59:56,655 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:00:06,815 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:00:16,982 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:00:27,144 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:00:37,308 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:00:47,469 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:00:57,642 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:01:07,802 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:01:17,964 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:01:28,125 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:01:38,285 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:01:48,445 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:01:58,606 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:02:08,766 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:02:18,926 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:02:29,087 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:02:39,249 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:02:49,410 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:02:59,570 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:03:09,731 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:03:19,898 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:03:30,058 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:03:40,219 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:03:50,381 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:04:00,546 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:04:10,708 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:04:20,870 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:04:31,033 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:04:41,194 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:04:51,359 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:05:01,520 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:05:11,680 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:05:21,841 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:05:32,003 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:05:42,176 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:05:52,337 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:06:02,500 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:06:12,660 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:06:22,823 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:06:32,984 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:06:43,145 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:06:53,306 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:07:03,467 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:07:13,628 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:07:23,788 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:07:31,232 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 409 Conflict"
+2025-06-24 09:07:31,232 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:07:31,233 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 3584, in get_updates
+    await self._post(
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:07:36,584 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 409 Conflict"
+2025-06-24 09:07:36,584 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:07:36,585 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 3584, in get_updates
+    await self._post(
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:07:42,910 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 409 Conflict"
+2025-06-24 09:07:42,911 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:07:42,911 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 3584, in get_updates
+    await self._post(
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:07:48,251 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:07:48,253 - bot.handlers.base_handler - INFO - List command received from user Son (ID: 5005604119)
+2025-06-24 09:07:48,253 - bot.services.wallet_service - INFO - Loaded 9 wallets from wallets.json
+2025-06-24 09:07:48,924 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-24 09:07:48,925 - bot.handlers.base_handler - INFO - List command processed for user Son, 9 wallets shown
+2025-06-24 09:07:50,742 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 409 Conflict"
+2025-06-24 09:07:50,742 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:07:50,743 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 3584, in get_updates
+    await self._post(
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:07:54,992 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:07:55,818 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-24 09:07:55,819 - bot.handlers.base_handler - INFO - Help command processed for user Son
+2025-06-24 09:07:58,460 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 409 Conflict"
+2025-06-24 09:07:58,461 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:07:58,461 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 3584, in get_updates
+    await self._post(
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:08:07,535 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:08:07,536 - bot.handlers.base_handler - INFO - Check command received from user Son (ID: 5005604119)
+2025-06-24 09:08:07,536 - bot.services.wallet_service - INFO - Loaded 9 wallets from wallets.json
+2025-06-24 09:08:08,196 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/sendMessage "HTTP/1.1 200 OK"
+2025-06-24 09:08:08,991 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-24 09:08:09,767 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 336830.855823 USDT
+2025-06-24 09:08:10,503 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 27878.668801 USDT
+2025-06-24 09:08:11,217 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 294935.622128 USDT
+2025-06-24 09:08:11,965 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7938.576464 USDT
+2025-06-24 09:08:12,692 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 624.273452 USDT
+2025-06-24 09:08:13,458 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 17949.16834 USDT
+2025-06-24 09:08:14,198 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.52 USDT
+2025-06-24 09:08:14,937 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-24 09:08:14,939 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 409 Conflict"
+2025-06-24 09:08:14,939 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:08:14,940 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 3584, in get_updates
+    await self._post(
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:08:15,605 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/editMessageText "HTTP/1.1 200 OK"
+2025-06-24 09:08:15,606 - bot.handlers.base_handler - INFO - Check command completed for user Son, 9/9 wallets successful
+2025-06-24 09:08:24,680 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 409 Conflict"
+2025-06-24 09:08:24,681 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:08:24,681 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 3584, in get_updates
+    await self._post(
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:08:36,343 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:08:41,229 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 409 Conflict"
+2025-06-24 09:08:41,229 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:08:41,229 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 3584, in get_updates
+    await self._post(
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:08:52,399 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:09:02,562 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:09:02,983 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 409 Conflict"
+2025-06-24 09:09:02,984 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:09:02,984 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 3584, in get_updates
+    await self._post(
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:09:14,146 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:09:24,307 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:09:33,264 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 409 Conflict"
+2025-06-24 09:09:33,264 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:09:33,265 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 3584, in get_updates
+    await self._post(
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:09:44,427 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:09:54,588 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/crypto-telegram-bot/.venv/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-06-24 09:09:44,427 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"
+2025-06-24 09:09:54,588 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7654469359:AAG1GvNUZwUD-RQfKYP9u2gm6j0BvtqHKT4/getUpdates "HTTP/1.1 200 OK"

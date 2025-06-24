@@ -44,8 +44,6 @@ Thumbs.db
 
 # Logs
 *.log
-!daily_reports.log
-!telegram_bot.log
 
 # Temporary files
 *.tmp

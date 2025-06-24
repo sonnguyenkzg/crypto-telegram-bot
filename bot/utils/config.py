@@ -24,12 +24,14 @@ class Config:
     @classmethod
     def get_authorized_users(cls):
         """Get list of authorized users based on environment."""
-        if cls.ENVIRONMENT == 'DEV':
-            # In DEV, use the AUTHORIZED_USER from .env
-            return [cls.AUTHORIZED_USER] if cls.AUTHORIZED_USER else []
-        else:
-            # In PROD, you can add multiple users or load from file
-            return [cls.AUTHORIZED_USER] if cls.AUTHORIZED_USER else []
+        if cls.AUTHORIZED_USER:
+            # Support comma-separated list of user IDs
+            if ',' in cls.AUTHORIZED_USER:
+                user_ids = [uid.strip() for uid in cls.AUTHORIZED_USER.split(',') if uid.strip()]
+            else:
+                user_ids = [cls.AUTHORIZED_USER.strip()]
+            return user_ids
+        return []
     
     @classmethod
     def setup_logging(cls):

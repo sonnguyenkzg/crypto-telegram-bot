@@ -9,3 +9,17 @@
 2025-06-23 23:00:55,946 - bot.utils.config - INFO - Scheduled: Daily reports at 00:00 GMT+7 (midnight)
 2025-06-23 23:00:55,947 - bot.utils.config - INFO - Press Ctrl+C to stop
 2025-06-23 23:00:55,947 - bot.utils.config - INFO - =====================================
+2025-06-24 00:00:55,955 - bot.utils.config - INFO - Starting daily report generation...
+2025-06-24 00:00:55,956 - bot.services.wallet_service - INFO - Loaded 9 wallets from wallets.json
+2025-06-24 00:00:55,956 - bot.services.daily_report_service - INFO - Generating daily report for 9 wallets
+2025-06-24 00:00:56,686 - bot.services.balance_service - INFO - Fetched balance for KZP 96G1: 0.591521 USDT
+2025-06-24 00:00:57,563 - bot.services.balance_service - INFO - Fetched balance for KZP BLG1: 356053.855823 USDT
+2025-06-24 00:00:58,282 - bot.services.balance_service - INFO - Fetched balance for KZP WDB1: 40886.668801 USDT
+2025-06-24 00:00:59,068 - bot.services.balance_service - INFO - Fetched balance for KZP TH 1: 230411.622128 USDT
+2025-06-24 00:00:59,782 - bot.services.balance_service - INFO - Fetched balance for KZP TH Y 1: 7938.576464 USDT
+2025-06-24 00:01:00,513 - bot.services.balance_service - INFO - Fetched balance for KZP TH BM 1: 4.273452 USDT
+2025-06-24 00:01:01,336 - bot.services.balance_service - INFO - Fetched balance for KZP PH 1: 15254.16834 USDT
+2025-06-24 00:01:02,060 - bot.services.balance_service - INFO - Fetched balance for KZP PH BM 1: 1.52 USDT
+2025-06-24 00:01:02,767 - bot.services.balance_service - INFO - Fetched balance for KZP KZO1: 0.0 USDT
+2025-06-24 00:01:02,767 - bot.services.daily_report_service - INFO - Daily report generated successfully: 9/9 wallets, Total: 650,551.28 USDT
+2025-06-24 00:01:02,768 - bot.utils.config - ERROR - Telegram error sending daily report: Unknown error in HTTP implementation: RuntimeError('Event loop is closed')

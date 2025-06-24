@@ -26,30 +26,33 @@ class HelpHandler(BaseHandler):
         if not await self.check_authorization(update):
             return
         
-        # Build help text dynamically from registered handlers
-        help_lines = ["📋 **Available Commands:**\n"]
+        # Build comprehensive help text based on current implementation
+        help_text = """📋 *Available Commands:*
+
+*Wallet Management:*
+• `/start` - Start the bot and check connection
+• `/help` - Show available commands and their descriptions
+• `/list` - Show all configured wallets
+• `/add "company" "wallet" "address"` - Add new wallet
+• `/remove "wallet_name"` - Remove wallet  
+• `/check` - Check all wallet balances
+• `/check "wallet_name"` - Check specific wallet balance
+• `/check "wallet1" "wallet2"` - Check multiple specific wallets
+
+*Examples:*
+• `/add "KZP" "KZP WDB2" "TEhmKXCPgX64yjQ3t9skuSyUQBxwaWY4KS"`
+• `/remove "KZP WDB2"`
+• `/list`
+• `/check`
+• `/check "KZP 96G1"`
+• `/check "KZP 96G1" "KZP WDB2"`
+
+*Notes:*
+• All arguments must be in quotes
+• TRC20 addresses start with 'T' (34 characters)
+• Balance reports sent via scheduled messages at midnight GMT+7
+• Only authorized team members can use commands"""
         
-        if self.handler_registry:
-            # Get commands from registry
-            for handler in self.handler_registry.get_all_handlers():
-                help_lines.append(f"/{handler.command_name} - {handler.description}")
-        else:
-            # Fallback static help (for this step)
-            help_lines.extend([
-                "/start - Start the bot and check connection",
-                "/help - Show this help message"
-            ])
-        
-        help_lines.extend([
-            "\n🚧 **Coming Soon:**",
-            "/list - Show all configured wallets",
-            "/check - Check wallet balances", 
-            "/add - Add a new wallet",
-            "/remove - Remove a wallet",
-            "\n*More commands will be added in the next phases.*"
-        ])
-        
-        help_text = "\n".join(help_lines)
         await update.message.reply_text(help_text, parse_mode='Markdown')
         
         user_name = update.effective_user.first_name or "User"

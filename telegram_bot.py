@@ -14,7 +14,7 @@ from telegram.ext import Application, MessageHandler, filters
 
 from bot.utils.config import Config
 from bot.utils.handler_registry import HandlerRegistry
-from bot.handlers import StartHandler, HelpHandler, ListHandler, AddHandler, CheckHandler, RemoveHandler, TestHandler
+from bot.handlers import StartHandler, HelpHandler, ListHandler, AddHandler, CheckHandler, RemoveHandler#, TestHandler
 
 # Setup logging and configuration
 logger = Config.setup_logging()
@@ -124,7 +124,7 @@ def setup_handlers() -> HandlerRegistry:
     add_handler = AddHandler()
     check_handler = CheckHandler()
     remove_handler = RemoveHandler()
-    test_handler = TestHandler() #testing
+    #test_handler = TestHandler() #testing
     
     registry.register_handler(start_handler)
     registry.register_handler(help_handler)
@@ -132,7 +132,7 @@ def setup_handlers() -> HandlerRegistry:
     registry.register_handler(add_handler)
     registry.register_handler(check_handler)
     registry.register_handler(remove_handler)
-    registry.register_handler(test_handler) # testing
+    #registry.register_handler(test_handler) # testing
     
     return registry
 

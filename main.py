@@ -58,15 +58,11 @@ class DailyReportScheduler:
                 logger.warning("No report generated (no wallets configured)")
                 return
             
-            # Add timestamp to report (clean format)
-            gmt7_time = datetime.now(timezone(timedelta(hours=7)))
-            report_with_timestamp = f"🕛 **Time: {gmt7_time.strftime('%Y-%m-%d %H:%M')} GMT+7**\n\n{report_message}"
-            
-            # Send to Telegram with fresh bot instance
+            # Send report without any header line - just the content
             if self.config.TELEGRAM_CHAT_ID:
                 await fresh_bot.send_message(
                     chat_id=self.config.TELEGRAM_CHAT_ID,
-                    text=report_with_timestamp,
+                    text=report_message,  # Send raw report without timestamp header
                     parse_mode='Markdown'
                 )
                 logger.info(f"✅ Daily report sent successfully to chat {self.config.TELEGRAM_CHAT_ID}")

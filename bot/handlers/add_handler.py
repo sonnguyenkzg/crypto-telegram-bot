@@ -5,6 +5,7 @@ from typing import Tuple, List, Union
 from telegram import Update
 from telegram.ext import ContextTypes
 
+from bot.utils.quote_parser import extract_quoted_strings, has_unquoted_text
 from .base_handler import BaseHandler
 from bot.services.wallet_service import WalletService
 
@@ -37,16 +38,15 @@ class AddHandler(BaseHandler):
         if not text or not text.strip():
             return False, "❌ Missing arguments"
         
-        # Find all quoted strings using the same pattern as Slack
-        quoted_pattern = r'"([^"]*)"'
-        matches = re.findall(quoted_pattern, text.strip())
+        # Extract quoted strings using universal parser
+        matches = extract_quoted_strings(text)
         
         if len(matches) != 3:
             return False, f"❌ Expected 3 quoted arguments, found {len(matches)}"
         
         company, wallet, address = matches
         
-        # Validate none are empty (same validation as Slack)
+        # Validate none are empty
         if not company.strip():
             return False, "❌ Company cannot be empty"
         if not wallet.strip():

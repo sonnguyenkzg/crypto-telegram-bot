@@ -9,6 +9,7 @@ from telegram.ext import ContextTypes
 from .base_handler import BaseHandler
 from bot.services.wallet_service import WalletService
 from bot.services.balance_service import BalanceService
+from bot.utils.quote_parser import extract_quoted_strings, has_unquoted_text
 
 class CheckHandler(BaseHandler):
     """Handler for the /check command."""
@@ -29,7 +30,7 @@ class CheckHandler(BaseHandler):
     def parse_check_arguments(self, text: str) -> List[str]:
         """
         Parse quoted arguments from check command text.
-        Now with STRICT quote validation - rejects unquoted text.
+        Supports all double quote types: "text", "text"
         
         Args:
             text: Command arguments from Telegram
@@ -40,32 +41,14 @@ class CheckHandler(BaseHandler):
         if not text or not text.strip():
             return []
         
-        # Clean the text first - remove markdown formatting (same as Slack)
-        cleaned_text = text.strip()
-        
-        # Remove common markdown patterns that might interfere
-        cleaned_text = re.sub(r'\*\*([^*]+)\*\*', r'\1', cleaned_text)  # Remove **bold**
-        cleaned_text = re.sub(r'\*([^*]+)\*', r'\1', cleaned_text)      # Remove *italic*
-        cleaned_text = re.sub(r'`([^`]+)`', r'\1', cleaned_text)        # Remove `code`
-        
-        # Find quoted strings - use only one pattern to avoid duplicates
-        quoted_inputs = re.findall(r'"([^"]*)"', cleaned_text)
-        
-        # NEW: Check if user provided unquoted text (should be rejected)
-        has_text_without_quotes = cleaned_text.strip() and not quoted_inputs
-        
-        if has_text_without_quotes:
-            # Return special marker to indicate unquoted text error
+        # Check for unquoted text (should be rejected)
+        if has_unquoted_text(text):
             return ["__UNQUOTED_ERROR__"]
         
-        # Filter out empty inputs and remove duplicates
-        valid_inputs = []
-        for inp in quoted_inputs:
-            cleaned_inp = inp.strip()
-            if cleaned_inp and cleaned_inp not in valid_inputs:
-                valid_inputs.append(cleaned_inp)
+        # Extract quoted strings using universal parser
+        quoted_inputs = extract_quoted_strings(text)
         
-        return valid_inputs
+        return quoted_inputs
     
     def resolve_wallets_to_check(self, inputs: List[str], wallet_data: Dict) -> tuple:
         """

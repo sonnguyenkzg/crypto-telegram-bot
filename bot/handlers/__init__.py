@@ -7,7 +7,7 @@ from .list_handler import ListHandler
 from .add_handler import AddHandler
 from .check_handler import CheckHandler
 from .remove_handler import RemoveHandler
-
+from .test_handler import TestHandler
 __all__ = [
     'BaseHandler',
     'StartHandler', 
@@ -15,5 +15,6 @@ __all__ = [
     'ListHandler',
     'AddHandler',
     'CheckHandler',
-    'RemoveHandler'
+    'RemoveHandler',
+    'TestHandler'
 ]

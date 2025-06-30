@@ -13,6 +13,7 @@ class Config:
     # Telegram settings
     TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
     TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
+    DAILY_REPORTS_TOPIC_ID = os.getenv('DAILY_REPORTS_TOPIC_ID')
     
     # Authorization settings
     AUTHORIZED_USER = os.getenv('AUTHORIZED_USER')

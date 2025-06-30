@@ -62,6 +62,7 @@ class DailyReportScheduler:
             if self.config.TELEGRAM_CHAT_ID:
                 await fresh_bot.send_message(
                     chat_id=self.config.TELEGRAM_CHAT_ID,
+                    message_thread_id=8,
                     text=report_message,  # Send raw report without timestamp header
                     parse_mode='Markdown'
                 )

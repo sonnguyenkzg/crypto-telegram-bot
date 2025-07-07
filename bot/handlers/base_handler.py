@@ -26,6 +26,9 @@ class BaseHandler(ABC):
         user_id = str(update.effective_user.id)
         user_name = update.effective_user.first_name or "User"
         
+        # TEMPORARY DEBUG - Add this line
+        self.logger.info(f"🔍 AUTH DEBUG: user_id={user_id}, effective_user={update.effective_user.first_name}, chat_id={update.message.chat_id}")
+
         if not self.is_authorized(user_id):
             await update.message.reply_text("❌ You are not authorized to use this bot.")
             self.logger.warning(f"Unauthorized access attempt from user {user_name} (ID: {user_id})")

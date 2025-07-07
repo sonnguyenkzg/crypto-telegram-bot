@@ -3,7 +3,7 @@
 Daily Balance Report Scheduler for Telegram Bot
 Sends automated daily reports at 12:00 AM GMT+7 (midnight)
 
-PRODUCTION VERSION: Fixed threading and clean formatting
+PRODUCTION VERSION: Fixed threading and clean formatting with table layout
 """
 
 import asyncio
@@ -12,6 +12,8 @@ import schedule
 import time
 import threading
 from datetime import datetime, timezone, timedelta
+from decimal import Decimal
+from typing import Dict
 
 from telegram import Bot
 from telegram.error import TelegramError
@@ -42,6 +44,74 @@ class DailyReportScheduler:
             logger.error(f"Failed to initialize bot: {e}")
             return False
     
+    def extract_wallet_group(self, wallet_name: str) -> str:
+        """
+        Extract group code from wallet name (e.g., 'KZP 96G1' -> 'KZP').
+        
+        Args:
+            wallet_name: Full wallet name
+            
+        Returns:
+            str: Group code
+        """
+        # Split wallet name and get first part as group
+        parts = wallet_name.split()
+        if len(parts) >= 1:
+            return parts[0]  # First part (e.g., "KZP")
+        
+        # Fallback: use first 3 characters
+        return wallet_name[:3].upper()
+    
+    def format_daily_report_table(self, wallet_balances: Dict, total_balance: Decimal, time_str: str) -> str:
+        """
+        Format daily report as a table: Group | Wallet Name | Amount.
+        
+        Args:
+            wallet_balances: Dictionary of wallet names to balance values
+            total_balance: Sum of all balances
+            time_str: Formatted time string
+            
+        Returns:
+            str: Formatted table message for daily report
+        """
+        # Count total wallets
+        total_wallets = len(wallet_balances)
+        
+        # Build table header
+        table = "```\n"
+        table += "Group  │ Wallet Name      │ Amount\n"
+        table += "───────┼──────────────────┼─────────────\n"
+        
+        # Sort wallets by group then by name
+        wallet_list = []
+        for wallet_name, balance in wallet_balances.items():
+            group_code = self.extract_wallet_group(wallet_name)
+            wallet_list.append((group_code, wallet_name, balance))
+        
+        # Sort by group, then by wallet name
+        wallet_list.sort(key=lambda x: (x[0], x[1]))
+        
+        # Add rows for each wallet
+        for group_code, wallet_name, balance in wallet_list:
+            # Truncate wallet name if too long
+            display_name = wallet_name[:16] if len(wallet_name) > 16 else wallet_name
+            
+            table += f"{group_code:6s} │ {display_name:16s} │ {balance:10,.2f}\n"
+        
+        # Add total row
+        table += "───────┼──────────────────┼─────────────\n"
+        table += f"{'TOTAL':6s} │ {'':<16s} │ {total_balance:10,.2f}\n"
+        table += "```"
+        
+        # Build complete daily report message
+        message = f"💰 *Daily Balance Report*\n\n"
+        message += f"🕛 *Time:* {time_str}\n\n"
+        message += f"📊 *Total wallets checked:* {total_wallets}\n\n"
+        message += f"*Wallet Balances:*\n\n"
+        message += table
+        
+        return message
+    
     async def send_daily_report(self):
         """Generate and send daily balance report."""
         try:
@@ -51,21 +121,60 @@ class DailyReportScheduler:
             # Create fresh bot instance for this thread
             fresh_bot = Bot(token=self.config.TELEGRAM_BOT_TOKEN)
             
-            # Generate report
-            report_message = await self.report_service.generate_daily_report()
+            # Generate the raw report using existing service
+            from bot.services.wallet_service import WalletService
+            from bot.services.balance_service import BalanceService
             
-            if not report_message:
-                logger.warning("No report generated (no wallets configured)")
+            wallet_service = WalletService()
+            balance_service = BalanceService()
+            
+            # Load wallets and fetch balances
+            wallet_data = wallet_service.load_wallets()
+            if not wallet_data:
+                logger.warning("No wallets configured for daily report")
                 return
             
-            # Send report without any header line - just the content
+            # Prepare wallets for balance checking
+            wallets_to_check = {name: info['address'] for name, info in wallet_data.items()}
+            
+            # Fetch all balances
+            balances = balance_service.fetch_multiple_balances(wallets_to_check)
+            
+            # Calculate total and filter successful balances
+            total_balance = Decimal('0')
+            wallet_balances = {}
+            
+            for wallet_name, balance in balances.items():
+                if balance is not None:
+                    wallet_balances[wallet_name] = balance
+                    total_balance += balance
+            
+            if not wallet_balances:
+                logger.warning("No successful balance fetches for daily report")
+                return
+            
+            # Get current GMT+7 time for display
+            gmt7_time = datetime.now(timezone(timedelta(hours=7)))
+            time_str = gmt7_time.strftime('%Y-%m-%d %H:%M GMT+7')
+            
+            # Format as table
+            report_message = self.format_daily_report_table(wallet_balances, total_balance, time_str)
+            
+            # Send report to specific topic
             if self.config.TELEGRAM_CHAT_ID:
-                await fresh_bot.send_message(
-                    chat_id=self.config.TELEGRAM_CHAT_ID,
-                    message_thread_id=self.config.DAILY_REPORTS_TOPIC_ID,
-                    text=report_message,  # Send raw report without timestamp header
-                    parse_mode='Markdown'
-                )
+                topic_id = getattr(self.config, 'DAILY_REPORTS_TOPIC_ID', None)
+                
+                send_params = {
+                    'chat_id': self.config.TELEGRAM_CHAT_ID,
+                    'text': report_message,
+                    'parse_mode': 'Markdown'
+                }
+                
+                # Add topic ID if configured
+                if topic_id:
+                    send_params['message_thread_id'] = int(topic_id)
+                
+                await fresh_bot.send_message(**send_params)
                 logger.info(f"✅ Daily report sent successfully to chat {self.config.TELEGRAM_CHAT_ID}")
             else:
                 logger.error("❌ TELEGRAM_CHAT_ID not configured")

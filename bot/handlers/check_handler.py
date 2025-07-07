@@ -98,6 +98,79 @@ class CheckHandler(BaseHandler):
         
         return wallets_to_check, not_found
     
+    def extract_wallet_group(self, wallet_name: str) -> str:
+        """
+        Extract group code from wallet name (e.g., 'KZP 96G1' -> 'KZP').
+        
+        Args:
+            wallet_name: Full wallet name
+            
+        Returns:
+            str: Group code
+        """
+        # Split wallet name and get first part as group
+        parts = wallet_name.split()
+        if len(parts) >= 1:
+            return parts[0]  # First part (e.g., "KZP")
+        
+        # Fallback: use first 3 characters
+        return wallet_name[:3].upper()
+    
+    def format_table_response(self, balances: Dict, successful_checks: int, total_balance: Decimal, time_str: str) -> str:
+        """
+        Format balance results as a simple table: Group | Wallet Name | Amount.
+        
+        Args:
+            balances: Dictionary of wallet names to balance values
+            successful_checks: Number of successful balance fetches
+            total_balance: Sum of all balances
+            time_str: Formatted time string
+            
+        Returns:
+            str: Formatted table message
+        """
+        # Count total wallets (including failed ones)
+        total_wallets = len(balances)
+        
+        # Build table header with bold column headers
+        table = "```\n"
+        table += "Group  │ Wallet Name      │ Amount\n"
+        table += "───────┼──────────────────┼─────────────\n"
+        
+        # Sort wallets by group then by name
+        wallet_list = []
+        for wallet_name, balance in balances.items():
+            if balance is not None:
+                group_code = self.extract_wallet_group(wallet_name)
+                wallet_list.append((group_code, wallet_name, balance))
+        
+        # Sort by group, then by wallet name
+        wallet_list.sort(key=lambda x: (x[0], x[1]))
+        
+        # Add rows for each wallet
+        grand_total = Decimal('0')
+        
+        for group_code, wallet_name, balance in wallet_list:
+            # Truncate wallet name if too long
+            display_name = wallet_name[:16] if len(wallet_name) > 16 else wallet_name
+            
+            table += f"{group_code:6s} │ {display_name:16s} │ {balance:10,.2f}\n"
+            grand_total += balance
+        
+        # Add total row
+        table += "───────┼──────────────────┼─────────────\n"
+        table += f"{'TOTAL':6s} │ {'':<16s} │ {grand_total:10,.2f}\n"
+        table += "```"
+        
+        # Build complete message
+        message = f"🤖 *Wallet Balance Check*\n\n"
+        message += f"⏰ *Time:* {time_str} GMT+{self.balance_service.GMT_OFFSET}\n\n"
+        message += f"📊 *Total wallets checked*: {total_wallets}\n\n"
+        message += f"*Wallet Balances:*\n\n"
+        message += table
+        
+        return message
+    
     async def handle(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         """Handle the /check command."""
         user_name = update.effective_user.first_name or "User"
@@ -202,37 +275,16 @@ Use `/list` to see all wallets or provide TRC20 addresses directly."""
             await checking_message.edit_text(error_msg, parse_mode='Markdown')
             return
         
-        # Build response message (same format as Slack with title)
+        # Get current time for display
         time_str = self.balance_service.get_current_gmt_time()
-        title = "🤖 *Wallet Balance Check*\n"
         
-        if len(wallets_to_check) == 1:
-            # Single wallet response
-            time_line = f"⏰ *Time:* {time_str} GMT+{self.balance_service.GMT_OFFSET}"
-            wallet_list = "\n".join(results)
-            message = f"{title}\n{time_line}\n\n{wallet_list}"
-            
-            # Add not found note for single wallet if needed
-            if not_found:
-                # Remove duplicates and join
-                unique_not_found = list(dict.fromkeys(not_found))
-                message += f"\n\n⚠️ *Not found:* {', '.join(unique_not_found)}"
-        else:
-            # Multiple wallets response
-            time_line = f"⏰ *Time:* {time_str} GMT+{self.balance_service.GMT_OFFSET}"
-            footer = f"\n\n📊 *Total:* {total_balance:,.2f} USDT"
-            
-            if successful_checks < len(wallets_to_check):
-                footer += f"\n⚠️ *Note:* {len(wallets_to_check) - successful_checks} wallet(s) failed to fetch"
-            
-            # Add not found wallets note
-            if not_found:
-                # Remove duplicates and join
-                unique_not_found = list(dict.fromkeys(not_found))
-                footer += f"\n❌ *Not found:* {', '.join(unique_not_found)}"
-            
-            wallet_list = "\n".join(results)
-            message = f"{title}\n{time_line}\n\n{wallet_list}{footer}"
+        # Format response as table
+        message = self.format_table_response(balances, successful_checks, total_balance, time_str)
+        
+        # Add not found note if any
+        if not_found:
+            unique_not_found = list(dict.fromkeys(not_found))
+            message += f"\n\n❌ **Not found:** {', '.join(unique_not_found)}"
         
         # Update the checking message with results
         await checking_message.edit_text(message, parse_mode='Markdown')

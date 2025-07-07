@@ -134,7 +134,7 @@ class CheckHandler(BaseHandler):
         
         # Build table header with bold column headers
         table = "```\n"
-        table += "Group  │ Wallet Name      │ Amount\n"
+        table += "Group  │ Wallet Name      │ Amount (USDT)\n"
         table += "───────┼──────────────────┼─────────────\n"
         
         # Sort wallets by group then by name

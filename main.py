@@ -79,7 +79,7 @@ class DailyReportScheduler:
         
         # Build table header
         table = "```\n"
-        table += "Group  │ Wallet Name      │ Amount\n"
+        table += "Group  │ Wallet Name      │ Amount (USDT)\n"
         table += "───────┼──────────────────┼─────────────\n"
         
         # Sort wallets by group then by name

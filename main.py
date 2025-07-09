@@ -44,25 +44,47 @@ class DailyReportScheduler:
             logger.error(f"Failed to initialize bot: {e}")
             return False
     
-    def extract_wallet_group(self, wallet_name: str) -> str:
+    def extract_wallet_group(self, wallet_name: str, wallet_data: Dict = None) -> str:
         """
-        Extract group code from wallet name (e.g., 'KZP 96G1' -> 'KZP').
+        Extract group code from wallet company or name.
+        
+        Priority:
+        1. Use company field from wallet_data if available
+        2. Parse wallet name for group code
+        3. Fallback to first 3 characters
         
         Args:
             wallet_name: Full wallet name
+            wallet_data: Dictionary containing wallet information
             
         Returns:
             str: Group code
         """
-        # Split wallet name and get first part as group
+        wallet_name = wallet_name.strip()
+        
+        # Handle external wallets
+        if wallet_name.startswith("External:"):
+            return "EXT"
+        
+        # If wallet_data is provided, try to get company from it
+        if wallet_data and wallet_name in wallet_data:
+            wallet_info = wallet_data[wallet_name]
+            if isinstance(wallet_info, dict) and 'company' in wallet_info:
+                company = wallet_info['company'].strip()
+                if company:
+                    return company.upper()
+        
+        # Fallback: Split by spaces and get the first meaningful part
         parts = wallet_name.split()
         if len(parts) >= 1:
-            return parts[0]  # First part (e.g., "KZP")
+            first_part = parts[0].strip()
+            if first_part:
+                return first_part.upper()
         
-        # Fallback: use first 3 characters
+        # Final fallback: use first 3 characters
         return wallet_name[:3].upper()
     
-    def format_daily_report_table(self, wallet_balances: Dict, total_balance: Decimal, time_str: str) -> str:
+    def format_daily_report_table(self, wallet_balances: Dict, total_balance: Decimal, time_str: str, wallet_data: Dict = None) -> str:
         """
         Format daily report as a table: Group | Wallet Name | Amount.
         
@@ -70,6 +92,7 @@ class DailyReportScheduler:
             wallet_balances: Dictionary of wallet names to balance values
             total_balance: Sum of all balances
             time_str: Formatted time string
+            wallet_data: Dictionary containing wallet information for group extraction
             
         Returns:
             str: Formatted table message for daily report
@@ -85,7 +108,7 @@ class DailyReportScheduler:
         # Sort wallets by group then by name
         wallet_list = []
         for wallet_name, balance in wallet_balances.items():
-            group_code = self.extract_wallet_group(wallet_name)
+            group_code = self.extract_wallet_group(wallet_name, wallet_data)
             wallet_list.append((group_code, wallet_name, balance))
         
         # Sort by group, then by wallet name
@@ -96,11 +119,14 @@ class DailyReportScheduler:
             # Truncate wallet name if too long
             display_name = wallet_name[:16] if len(wallet_name) > 16 else wallet_name
             
-            table += f"{group_code:6s} │ {display_name:16s} │ {balance:10,.2f}\n"
+            # Format balance with proper alignment
+            balance_str = f"{balance:,.2f}"
+            table += f"{group_code:6s} │ {display_name:16s} │ {balance_str:>11s}\n"
         
         # Add total row
         table += "───────┼──────────────────┼─────────────\n"
-        table += f"{'TOTAL':6s} │ {'':<16s} │ {total_balance:10,.2f}\n"
+        total_str = f"{total_balance:,.2f}"
+        table += f"{'TOTAL':6s} │ {'':<16s} │ {total_str:>11s}\n"
         table += "```"
         
         # Build complete daily report message
@@ -157,8 +183,8 @@ class DailyReportScheduler:
             gmt7_time = datetime.now(timezone(timedelta(hours=7)))
             time_str = gmt7_time.strftime('%Y-%m-%d %H:%M GMT+7')
             
-            # Format as table
-            report_message = self.format_daily_report_table(wallet_balances, total_balance, time_str)
+            # Format as table (now passing wallet_data for proper group extraction)
+            report_message = self.format_daily_report_table(wallet_balances, total_balance, time_str, wallet_data)
             
             # Send report to specific topic
             if self.config.TELEGRAM_CHAT_ID:

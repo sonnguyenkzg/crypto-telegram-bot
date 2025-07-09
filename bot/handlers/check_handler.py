@@ -98,25 +98,47 @@ class CheckHandler(BaseHandler):
         
         return wallets_to_check, not_found
     
-    def extract_wallet_group(self, wallet_name: str) -> str:
+    def extract_wallet_group(self, wallet_name: str, wallet_data: Dict = None) -> str:
         """
-        Extract group code from wallet name (e.g., 'KZP 96G1' -> 'KZP').
+        Extract group code from wallet company or name.
+        
+        Priority:
+        1. Use company field from wallet_data if available
+        2. Parse wallet name for group code
+        3. Fallback to first 3 characters
         
         Args:
             wallet_name: Full wallet name
+            wallet_data: Dictionary containing wallet information
             
         Returns:
             str: Group code
         """
-        # Split wallet name and get first part as group
+        wallet_name = wallet_name.strip()
+        
+        # Handle external wallets
+        if wallet_name.startswith("External:"):
+            return "EXT"
+        
+        # If wallet_data is provided, try to get company from it
+        if wallet_data and wallet_name in wallet_data:
+            wallet_info = wallet_data[wallet_name]
+            if isinstance(wallet_info, dict) and 'company' in wallet_info:
+                company = wallet_info['company'].strip()
+                if company:
+                    return company.upper()
+        
+        # Fallback: Split by spaces and get the first meaningful part
         parts = wallet_name.split()
         if len(parts) >= 1:
-            return parts[0]  # First part (e.g., "KZP")
+            first_part = parts[0].strip()
+            if first_part:
+                return first_part.upper()
         
-        # Fallback: use first 3 characters
+        # Final fallback: use first 3 characters
         return wallet_name[:3].upper()
     
-    def format_table_response(self, balances: Dict, successful_checks: int, total_balance: Decimal, time_str: str) -> str:
+    def format_table_response(self, balances: Dict, successful_checks: int, total_balance: Decimal, time_str: str, wallet_data: Dict = None) -> str:
         """
         Format balance results as a simple table: Group | Wallet Name | Amount.
         
@@ -125,6 +147,7 @@ class CheckHandler(BaseHandler):
             successful_checks: Number of successful balance fetches
             total_balance: Sum of all balances
             time_str: Formatted time string
+            wallet_data: Dictionary containing wallet information for group extraction
             
         Returns:
             str: Formatted table message
@@ -141,7 +164,7 @@ class CheckHandler(BaseHandler):
         wallet_list = []
         for wallet_name, balance in balances.items():
             if balance is not None:
-                group_code = self.extract_wallet_group(wallet_name)
+                group_code = self.extract_wallet_group(wallet_name, wallet_data)
                 wallet_list.append((group_code, wallet_name, balance))
         
         # Sort by group, then by wallet name
@@ -154,19 +177,28 @@ class CheckHandler(BaseHandler):
             # Truncate wallet name if too long
             display_name = wallet_name[:16] if len(wallet_name) > 16 else wallet_name
             
-            table += f"{group_code:6s} │ {display_name:16s} │ {balance:10,.2f}\n"
+            # Format balance with proper alignment
+            balance_str = f"{balance:,.2f}"
+            table += f"{group_code:6s} │ {display_name:16s} │ {balance_str:>11s}\n"
             grand_total += balance
         
         # Add total row
         table += "───────┼──────────────────┼─────────────\n"
-        table += f"{'TOTAL':6s} │ {'':<16s} │ {grand_total:10,.2f}\n"
+        total_str = f"{grand_total:,.2f}"
+        table += f"{'TOTAL':6s} │ {'':<16s} │ {total_str:>11s}\n"
         table += "```"
         
         # Build complete message
         message = f"🤖 *Wallet Balance Check*\n\n"
         message += f"⏰ *Time:* {time_str} GMT+{self.balance_service.GMT_OFFSET}\n\n"
-        message += f"📊 *Total wallets checked*: {total_wallets}\n\n"
-        message += f"*Wallet Balances:*\n\n"
+        message += f"📊 *Total wallets checked*: {total_wallets}\n"
+        
+        if successful_checks < total_wallets:
+            failed_checks = total_wallets - successful_checks
+            message += f"✅ *Successful:* {successful_checks}\n"
+            message += f"❌ *Failed:* {failed_checks}\n"
+        
+        message += f"\n*Wallet Balances:*\n\n"
         message += table
         
         return message
@@ -218,6 +250,7 @@ class CheckHandler(BaseHandler):
 
 *Examples:*
 • `/check "KZP 96G1"`
+• `/check "TRC A 1"`
 • `/check "TNZJ5wTSMK4oR79CYzy8BGK6LWNmQxcuM8"`"""
             
             await update.message.reply_text(usage_message, parse_mode='Markdown')
@@ -279,7 +312,7 @@ Use `/list` to see all wallets or provide TRC20 addresses directly."""
         time_str = self.balance_service.get_current_gmt_time()
         
         # Format response as table
-        message = self.format_table_response(balances, successful_checks, total_balance, time_str)
+        message = self.format_table_response(balances, successful_checks, total_balance, time_str, wallet_data)
         
         # Add not found note if any
         if not_found:

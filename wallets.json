@@ -43,5 +43,10 @@
     "company": "KZP",
     "wallet": "KZP KZO1",
     "address": "TDj1whxgFJSGktyv9yLR3wZUm5gNK8X7m2"
+  },
+  "TRC A 1": {
+    "company": "KZG",
+    "wallet": "TRC A 1",
+    "address": "TDgWVGJKktTMaGt9fLJhTr7PHY3hEfk6BU"
   }
 }

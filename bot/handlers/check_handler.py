@@ -138,9 +138,45 @@ class CheckHandler(BaseHandler):
         # Final fallback: use first 3 characters
         return wallet_name[:3].upper()
     
+    def wrap_text(self, text: str, max_width: int) -> List[str]:
+        """
+        Wrap text to multiple lines if too long.
+        
+        Args:
+            text: Text to wrap
+            max_width: Maximum width per line
+            
+        Returns:
+            List[str]: List of wrapped lines
+        """
+        if len(text) <= max_width:
+            return [text]
+        
+        words = text.split()
+        lines = []
+        current_line = ""
+        
+        for word in words:
+            test_line = current_line + (" " + word if current_line else word)
+            if len(test_line) <= max_width:
+                current_line = test_line
+            else:
+                if current_line:
+                    lines.append(current_line)
+                    current_line = word
+                else:
+                    # Single word is too long, truncate it
+                    lines.append(word[:max_width])
+                    current_line = ""
+        
+        if current_line:
+            lines.append(current_line)
+        
+        return lines
+    
     def format_table_response(self, balances: Dict, successful_checks: int, total_balance: Decimal, time_str: str, wallet_data: Dict = None) -> str:
         """
-        Format balance results as a simple table: Group | Wallet Name | Amount.
+        Format balance results as a mobile-friendly table with multi-line text wrapping.
         
         Args:
             balances: Dictionary of wallet names to balance values
@@ -150,15 +186,15 @@ class CheckHandler(BaseHandler):
             wallet_data: Dictionary containing wallet information for group extraction
             
         Returns:
-            str: Formatted table message
+            str: Mobile-optimized table message with multi-line wrapping
         """
         # Count total wallets (including failed ones)
         total_wallets = len(balances)
         
-        # Build table header with bold column headers
+        # Build table header
         table = "```\n"
-        table += "Group  │ Wallet Name      │ Amount (USDT)\n"
-        table += "───────┼──────────────────┼─────────────\n"
+        table += "Group   │Wallet Name   │Amount (USDT) \n"
+        table += "────────┼──────────────┼──────────────\n"
         
         # Sort wallets by group then by name
         wallet_list = []
@@ -170,22 +206,28 @@ class CheckHandler(BaseHandler):
         # Sort by group, then by wallet name
         wallet_list.sort(key=lambda x: (x[0], x[1]))
         
-        # Add rows for each wallet
+        # Add rows for each wallet with multi-line wrapping
         grand_total = Decimal('0')
         
         for group_code, wallet_name, balance in wallet_list:
-            # Truncate wallet name if too long
-            display_name = wallet_name[:16] if len(wallet_name) > 16 else wallet_name
-            
-            # Format balance with proper alignment
+            # Wrap wallet name if too long (12 chars max per line)
+            wrapped_lines = self.wrap_text(wallet_name, 12)
             balance_str = f"{balance:,.2f}"
-            table += f"{group_code:6s} │ {display_name:16s} │ {balance_str:>11s}\n"
+            
+            # First line with group and balance
+            first_line = wrapped_lines[0] if wrapped_lines else ""
+            table += f"{group_code:7s} │ {first_line:12s} │ {balance_str:>12s}\n"
+            
+            # Additional lines for wrapped text (empty group and balance columns)
+            for line in wrapped_lines[1:]:
+                table += f"{'':7s} │ {line:12s} │ {'':>12s}\n"
+            
             grand_total += balance
         
         # Add total row
-        table += "───────┼──────────────────┼─────────────\n"
+        table += "────────┼──────────────┼──────────────\n"
         total_str = f"{grand_total:,.2f}"
-        table += f"{'TOTAL':6s} │ {'':<16s} │ {total_str:>11s}\n"
+        table += f"{'TOTAL':7s} │ {'':<12s} │ {total_str:>12s}\n"
         table += "```"
         
         # Build complete message
@@ -311,7 +353,7 @@ Use `/list` to see all wallets or provide TRC20 addresses directly."""
         # Get current time for display
         time_str = self.balance_service.get_current_gmt_time()
         
-        # Format response as table
+        # Format response as mobile-friendly table
         message = self.format_table_response(balances, successful_checks, total_balance, time_str, wallet_data)
         
         # Add not found note if any

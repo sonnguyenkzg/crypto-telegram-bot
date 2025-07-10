@@ -3,7 +3,7 @@
 Daily Balance Report Scheduler for Telegram Bot
 Sends automated daily reports at 12:00 AM GMT+7 (midnight)
 
-PRODUCTION VERSION: Fixed threading and clean formatting with table layout
+PRODUCTION VERSION: Fixed threading and clean formatting with table layout and multi-line wrapping
 """
 
 import asyncio
@@ -13,7 +13,7 @@ import time
 import threading
 from datetime import datetime, timezone, timedelta
 from decimal import Decimal
-from typing import Dict
+from typing import Dict, List
 
 from telegram import Bot
 from telegram.error import TelegramError
@@ -84,9 +84,45 @@ class DailyReportScheduler:
         # Final fallback: use first 3 characters
         return wallet_name[:3].upper()
     
+    def wrap_text(self, text: str, max_width: int) -> List[str]:
+        """
+        Wrap text to multiple lines if too long.
+        
+        Args:
+            text: Text to wrap
+            max_width: Maximum width per line
+            
+        Returns:
+            List[str]: List of wrapped lines
+        """
+        if len(text) <= max_width:
+            return [text]
+        
+        words = text.split()
+        lines = []
+        current_line = ""
+        
+        for word in words:
+            test_line = current_line + (" " + word if current_line else word)
+            if len(test_line) <= max_width:
+                current_line = test_line
+            else:
+                if current_line:
+                    lines.append(current_line)
+                    current_line = word
+                else:
+                    # Single word is too long, truncate it
+                    lines.append(word[:max_width])
+                    current_line = ""
+        
+        if current_line:
+            lines.append(current_line)
+        
+        return lines
+    
     def format_daily_report_table(self, wallet_balances: Dict, total_balance: Decimal, time_str: str, wallet_data: Dict = None) -> str:
         """
-        Format daily report as a table: Group | Wallet Name | Amount.
+        Format daily report as a mobile-friendly table with multi-line text wrapping.
         
         Args:
             wallet_balances: Dictionary of wallet names to balance values
@@ -95,15 +131,15 @@ class DailyReportScheduler:
             wallet_data: Dictionary containing wallet information for group extraction
             
         Returns:
-            str: Formatted table message for daily report
+            str: Mobile-optimized table message with multi-line wrapping
         """
         # Count total wallets
         total_wallets = len(wallet_balances)
         
         # Build table header
         table = "```\n"
-        table += "Group  │ Wallet Name      │ Amount (USDT)\n"
-        table += "───────┼──────────────────┼─────────────\n"
+        table += "Group   │Wallet Name   │Amount (USDT) \n"
+        table += "────────┼──────────────┼──────────────\n"
         
         # Sort wallets by group then by name
         wallet_list = []
@@ -114,25 +150,30 @@ class DailyReportScheduler:
         # Sort by group, then by wallet name
         wallet_list.sort(key=lambda x: (x[0], x[1]))
         
-        # Add rows for each wallet
+        # Add rows for each wallet with multi-line wrapping
         for group_code, wallet_name, balance in wallet_list:
-            # Truncate wallet name if too long
-            display_name = wallet_name[:16] if len(wallet_name) > 16 else wallet_name
-            
-            # Format balance with proper alignment
+            # Wrap wallet name if too long (12 chars max per line)
+            wrapped_lines = self.wrap_text(wallet_name, 12)
             balance_str = f"{balance:,.2f}"
-            table += f"{group_code:6s} │ {display_name:16s} │ {balance_str:>11s}\n"
+            
+            # First line with group and balance
+            first_line = wrapped_lines[0] if wrapped_lines else ""
+            table += f"{group_code:7s} │ {first_line:12s} │ {balance_str:>12s}\n"
+            
+            # Additional lines for wrapped text (empty group and balance columns)
+            for line in wrapped_lines[1:]:
+                table += f"{'':7s} │ {line:12s} │ {'':>12s}\n"
         
         # Add total row
-        table += "───────┼──────────────────┼─────────────\n"
+        table += "────────┼──────────────┼──────────────\n"
         total_str = f"{total_balance:,.2f}"
-        table += f"{'TOTAL':6s} │ {'':<16s} │ {total_str:>11s}\n"
+        table += f"{'TOTAL':7s} │ {'':<12s} │ {total_str:>12s}\n"
         table += "```"
         
         # Build complete daily report message
         message = f"💰 *Daily Balance Report*\n\n"
         message += f"🕛 *Time:* {time_str}\n\n"
-        message += f"📊 *Total wallets checked:* {total_wallets}\n\n"
+        message += f"📊 *Total wallets:* {total_wallets}\n\n"
         message += f"*Wallet Balances:*\n\n"
         message += table
         
@@ -183,7 +224,7 @@ class DailyReportScheduler:
             gmt7_time = datetime.now(timezone(timedelta(hours=7)))
             time_str = gmt7_time.strftime('%Y-%m-%d %H:%M GMT+7')
             
-            # Format as table (now passing wallet_data for proper group extraction)
+            # Format as mobile-optimized table with multi-line wrapping
             report_message = self.format_daily_report_table(wallet_balances, total_balance, time_str, wallet_data)
             
             # Send report to specific topic
